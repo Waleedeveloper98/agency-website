@@ -5,6 +5,7 @@ import Nav from "../features/landing-page/components/Nav";
 import ReelsMarqueContainer from "../features/landing-page/components/ReelsMarqueContainer";
 import Lenis from "lenis";
 import About from "../features/landing-page/pages/About";
+import Faq from "../features/landing-page/pages/Faq";
 
 const App = () => {
   useEffect(() => {
@@ -24,6 +25,7 @@ const App = () => {
         <Home />
         <ReelsMarqueContainer />
         <About />
+        <Faq />
       </main>
     </>
   );
