@@ -13,7 +13,6 @@ const navLinks = [
 const otherPages = [
   "Privacy Policy",
   "Terms & Conditions",
-  "Cookie Policy",
   "Refund Policy",
 ];
 

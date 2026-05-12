@@ -9,11 +9,11 @@
     --secondary-color: #737373;
 }
 
-.primary-font{
+.primary-font {
     font-family: var(--primary-font);
 }
 
-.secondary-font{
+.secondary-font {
     font-family: var(--secondary-font);
 }
 
@@ -50,6 +50,12 @@
         animation: marquee-reverse 18s linear infinite;
     }
 }
-body{
+
+body {
     scroll-behavior: smooth;
+}
+
+::selection {
+    color: white;
+    background-color: #a0df03;
 }

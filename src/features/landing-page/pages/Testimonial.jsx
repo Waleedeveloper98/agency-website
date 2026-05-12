@@ -3,7 +3,7 @@ import CustomerReviews from '../components/CustomerReviews'
 
 const Testimonial = () => {
   return (
-    <section id='testimonials' className='w-full'>
+    <section id='testimonials' className='w-full py-10 md:py-16'>
         <h2 className='text-black text-center primary-font text-4xl py-10 md:text-5xl md:font-medium'>Our happy customers</h2>
         <CustomerReviews />
     </section>

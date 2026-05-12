@@ -63,9 +63,12 @@ const Nav = () => {
         }`}
       >
         <ul className="flex flex-col items-center gap-5 bg-white rounded-2xl py-6 shadow-sm border border-black/5">
-          {links.map((link) => (
+          {links.map((link,index) => (
             <li key={link}>
-              <a
+              <Link
+                to={link.toLowerCase()}
+                smooth={true}
+                duration={index * 300}
                 href="#"
                 onClick={() => setIsMenuOpen(false)}
                 className="text-lg text-black hover:text-black transition relative group"
@@ -73,7 +76,7 @@ const Nav = () => {
                 {link}
 
                 <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#b8ff03] transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
