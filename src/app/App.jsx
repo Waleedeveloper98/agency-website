@@ -8,6 +8,9 @@ import About from "../features/landing-page/pages/About";
 import Faq from "../features/landing-page/pages/Faq";
 import Services from "../features/landing-page/pages/Services";
 import Testimonial from "../features/landing-page/pages/Testimonial";
+import Team from "../features/landing-page/pages/Team";
+import GrowWithUs from "../features/landing-page/components/GrowWithUs";
+import Contact from "../features/landing-page/pages/Contact";
 
 const App = () => {
   useEffect(() => {
@@ -23,13 +26,16 @@ const App = () => {
   return (
     <>
       <Nav />
-      <main className="w-full  max-w-[1280px] mx-auto">
+      <main className="w-full max-w-[1280px] mx-auto">
         <Home />
         <ReelsMarqueContainer />
         <About />
         <Services />
-        <Faq />
+        <GrowWithUs />
         <Testimonial />
+        <Team />
+        <Faq />
+        <Contact /> 
       </main>
     </>
   );

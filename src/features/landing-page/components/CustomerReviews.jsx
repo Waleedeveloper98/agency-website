@@ -52,7 +52,7 @@ export default function CustomerReviews() {
   const [activeReview, setActiveReview] = useState(reviews[0]);
 
   return (
-    <section className="w-full max-w-[1280px] mx-auto secondary-font  bg-gradient-to-b from-white from-[70%] to-[var(--primary-color)] to-[100%] flex items-center justify-center px-6 py-16 pb-24 overflow-hidden">
+    <section className="w-full max-w-[1280px] mx-auto secondary-font  bg-gradient-to-b from-white from-[70%] to-[var(--primary-color)] to-[100%] flex items-center justify-center px-6 py-10 pb-24 overflow-hidden">
       <div className="relative w-full max-w-[600px]">
         {/*Glow */}
         <div className="absolute bottom-[-80px] left-1/2 -translate-x-1/2 w-[90%] h-[180px] bg-(--primary-color) blur-[90px] opacity-70 rounded-full"></div>

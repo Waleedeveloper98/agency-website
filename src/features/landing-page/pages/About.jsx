@@ -40,7 +40,7 @@ const About = () => {
               key={item.count}
               className="relative rounded-xl overflow-hidden flex items-center justify-center flex-col gap-4 md:gap-1 mb-2 md:mb-6"
             >
-              <h5 className="text-6xl md:text-7xl primary-font font-medium bg-gradient-to-r from-[#b8ff03] to-[#9ee100] text-transparent bg-clip-text opacity-45 z-0">
+              <h5 className="text-6xl md:text-7xl primary-font font-medium bg-gradient-to-r from-[#9ee100] to-(--primary-color) text-transparent bg-clip-text opacity-45 z-0">
                 {item.count}
               </h5>
               <h4 className="primary-font text-base md:text-2xl whitespace-nowrap font-normal text-center leading-none uppercase">

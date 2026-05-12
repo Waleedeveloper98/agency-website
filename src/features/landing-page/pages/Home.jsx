@@ -121,16 +121,17 @@ const Home = () => {
           text="Happy Clients"
         />
         {/* heading */}
-        <div className="flex flex-col md:gap-2">
+        <div className="flex flex-col md:gap-2 select-none">
           <div className="max-w-5/5 mx-auto">
             <h1 className="text-5xl font-medium sm:text-5xl md:text-6xl lg:text-8xl  font-bold pointer-events-none text-shadow-black/10 text-shadow-lg md:leading-20">
               We Edit Videos
             </h1>
           </div>
-          <div className="max-w-5/5 mx-auto">
+          <div className="max-w-5/5 mx-auto flex  items-center gap-3">
             <h1 className="text-5xl font-medium sm:text-5xl md:text-6xl lg:text-8xl font-bold pointer-events-none text-shadow-black/10 text-shadow-lg md:leading-20">
-              Build Audiences
+              Build
             </h1>
+            <h1 className="secondary-font italic font-extralight text-4xl md:text-6xl lg:text-7xl">Audience</h1>
           </div>
         </div>
         {/* subheading */}
