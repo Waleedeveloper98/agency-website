@@ -22,7 +22,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="w-full secondary-font bg-white px-4 py-20 overflow-hidden">
+    <section id="contact" className="w-full secondary-font bg-white px-4 py-20 overflow-hidden">
       <div className="max-w-[1280px] mx-auto">
         {/* Badge */}
         <div className="flex justify-center mb-6">

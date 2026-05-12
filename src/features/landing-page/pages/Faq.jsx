@@ -48,7 +48,7 @@ const Faq = () => {
   };
 
   return (
-    <div className="max-w-5xl mx-auto py-10 md:pt-18 pb-20 px-4 flex flex-col gap-2">
+    <div id="faq" className="max-w-5xl mx-auto py-10 md:pt-18 pb-20 px-4 flex flex-col gap-2">
       <h2 className="primary-font font-medium text-center mb-8 md:mb-14 text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-10">Curious? Check Out the (FAQs)</h2>
       {faqData.map((item, index) => {
         const isOpen = openIndex === index;

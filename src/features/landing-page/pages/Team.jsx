@@ -52,7 +52,7 @@ const Team = () => {
         }
       `}</style>
 
-      <section className="bg-white w-full py-20 px-4 sm:px-6 lg:px-8">
+      <section id="team" className="bg-white w-full py-20 px-4 sm:px-6 lg:px-8">
         {/* Inner container */}
         <div className="max-w-[1280px] mx-auto flex flex-col">
           {/* ── Badge ── */}

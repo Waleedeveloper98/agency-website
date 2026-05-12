@@ -11,6 +11,7 @@ import Testimonial from "../features/landing-page/pages/Testimonial";
 import Team from "../features/landing-page/pages/Team";
 import GrowWithUs from "../features/landing-page/components/GrowWithUs";
 import Contact from "../features/landing-page/pages/Contact";
+import Footer from "../features/landing-page/components/Footer";
 
 const App = () => {
   useEffect(() => {
@@ -35,7 +36,8 @@ const App = () => {
         <Testimonial />
         <Team />
         <Faq />
-        <Contact /> 
+        <Contact />
+        <Footer />
       </main>
     </>
   );

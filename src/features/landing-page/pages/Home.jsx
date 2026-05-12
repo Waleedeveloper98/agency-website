@@ -141,7 +141,7 @@ const Home = () => {
             you can focus on creating while we handle the rest.
           </p>
         </div>
-        <button className="bg-gradient-to-br from-[#a6e800] to-(--primary-color) text-black px-6 py-3 hover:scale-105 transition-all duration-300 rounded-md shadow shadow-black/10">
+        <button className="bg-gradient-to-br from-[#a6e800] to-(--primary-color) text-white px-6 py-3 hover:scale-105 transition-all duration-300 rounded-md shadow shadow-black/10">
           <div>
             <p className="text-sm md:text-base lg:text-lg cursor-pointer secondary-font font-semibold">
               Get Free Consultation
