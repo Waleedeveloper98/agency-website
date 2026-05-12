@@ -102,7 +102,7 @@ const Home = () => {
       />
 
       {/* Content */}
-      <div className="relative syne z-10 text-center px-15 flex flex-col items-center gap-8">
+      <div className="relative font-['Syne'] z-10 text-center px-15 flex flex-col items-center gap-8">
         {/* heading */}
         <div className="flex flex-col md:gap-2">
           <div className="max-w-5/5 mx-auto">
@@ -118,14 +118,14 @@ const Home = () => {
         </div>
         {/* subheading */}
         <div className="max-w-xl">
-          <p className="pointer-events-none inter text-neutral-500 text-sm sm:text-base">
+          <p className="pointer-events-none font-['Inter'] text-(--secondary-color) text-sm sm:text-base">
             We edit your videos into scroll-stopping, high-retention content so
             you can focus on creating while we handle the rest.
           </p>
         </div>
-        <button className="bg-gradient-to-br from-[#a6e800] to-[#b8ff03] text-black px-6 py-3 ">
+        <button className="bg-gradient-to-br from-[#a6e800] to-(--primary-color) text-black px-6 py-3 hover:scale-105 transition-all duration-300">
           <div>
-            <p className="text-sm md:text-base cursor-pointer font-bold">
+            <p className="text-sm md:text-base lg:text-lg cursor-pointer font-bold">
               Get Free Consultation
             </p>
           </div>

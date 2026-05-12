@@ -2,13 +2,13 @@
 
 @import "tailwindcss";
 
-.syne {
-    font-family: "Syne", sans-serif;
+:root {
+    --primary-font: "Syne", sans-serif;
+    --secondary-font: "Inter", sans-serif;
+    --primary-color: #b8ff03;
+    --secondary-color: #737373;
 }
 
-.inter {
-    font-family: "Inter", sans-serif;
-}
 
 @layer utilities {
     .transform-style-preserve-3d {
@@ -43,4 +43,3 @@
         animation: marquee-reverse 18s linear infinite;
     }
 }
-

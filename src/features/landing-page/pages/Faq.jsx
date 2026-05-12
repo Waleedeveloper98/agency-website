@@ -49,7 +49,7 @@ const Faq = () => {
 
   return (
     <div className="max-w-5xl mx-auto py-10 md:pt-18 pb-20 px-4 flex flex-col gap-2">
-      <h2 className="syne text-center mb-8 md:mb-14 text-2xl sm:text-3xl md:text-4xl font-bold px-10">Curious? Check Out the (FAQs)</h2>
+      <h2 className="font-['Syne'] text-center mb-8 md:mb-14 text-2xl sm:text-3xl md:text-4xl font-bold px-10">Curious? Check Out the (FAQs)</h2>
       {faqData.map((item, index) => {
         const isOpen = openIndex === index;
         const isHovered = hoveredIndex === index;
@@ -64,7 +64,7 @@ const Faq = () => {
               className="w-full flex items-center justify-between px-8 py-4 md:py-6 text-left cursor-pointer"
             >
               <span
-                className="text-lg md:text-xl font-medium inter transition-all duration-300"
+                className="text-lg md:text-xl font-medium font-['Inter'] transition-all duration-300"
                 style={{
                   transform: isHovered ? "translateX(10px)" : "translateX(0px)",
                   color: isHovered ? "#84cc16" : "#1a1a1a",
@@ -77,7 +77,7 @@ const Faq = () => {
                 className="flex-shrink-0 ml-6 transition-all duration-300"
                 style={{
                   transform: `translateX(${isHovered ? "-10px" : "0px"}) rotate(${isOpen ? "180deg" : "0deg"})`,
-                  color: isHovered ? "#84cc16" : "#525252",
+                  color: isHovered ? "#b8ff03" : "#525252",
                 }}
                 size={22}
                 strokeWidth={1.5}
@@ -92,7 +92,7 @@ const Faq = () => {
               }}
             >
               <div style={{ overflow: "hidden" }}>
-                <p className="inter text-neutral-500 px-8 pb-6 pt-0 sm:pr-20 leading-relaxed md:text-lg">
+                <p className="font-['Inter'] text-(--secondary-color) px-8 pb-6 pt-0 sm:pr-20 leading-relaxed md:text-lg">
                   {item.answer}
                 </p>
               </div>
