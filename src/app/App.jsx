@@ -6,6 +6,7 @@ import ReelsMarqueContainer from "../features/landing-page/components/ReelsMarqu
 import Lenis from "lenis";
 import About from "../features/landing-page/pages/About";
 import Faq from "../features/landing-page/pages/Faq";
+import Services from "../features/landing-page/pages/Services";
 
 const App = () => {
   useEffect(() => {
@@ -21,10 +22,11 @@ const App = () => {
   return (
     <>
       <Nav />
-      <main className="w-full overflow-hidden max-w-[1200px] mx-auto">
+      <main className="w-full  max-w-[1200px] mx-auto">
         <Home />
         <ReelsMarqueContainer />
         <About />
+        <Services />
         <Faq />
       </main>
     </>

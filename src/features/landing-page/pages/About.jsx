@@ -2,9 +2,9 @@ import React from "react";
 
 const About = () => {
   return (
-    <section className="w-full relative max-w-[1280px] mx-auto p-6 flex flex-col gap-13 pt-10 sm:pt-32 sm:pb-20 sm:flex-row sm:items-start">
-      <div className="sm:w-[30%] sm:sticky sm:top-10">
-        <h3 className="font-['Syne'] text-3xl md:text-5xl font-semibold">About Our Agency</h3>
+    <section className="w-full relative max-w-[1280px] mx-auto p-6 flex flex-col gap-13 pt-20 sm:pt-32 pb-16 sm:pb-20 sm:flex-row sm:items-start">
+      <div className="sm:w-[30%] sm:sticky sm:top-4">
+        <h3 className="font-['Syne'] text-3xl md:text-4xl font-semibold text-center sm:text-start">About Our Agency</h3>
       </div>
       <div className="font-['Inter'] sm:w-[70%] sm:pr-10 flex flex-col gap-6">
         <h4 className="text-2xl sm:text-3xl md:text-4xl text-(--secondary-color) mb-4">
@@ -21,7 +21,7 @@ const About = () => {
             videos, spiritual content, and talking head videos — delivering
             content that doesn't just look good, but actually performs.
           </p>
-          <p>
+          <p className="hidden">
             We don't believe in average. Every project we touch is treated with
             obsessive attention to detail, creative thinking, and a genuine
             desire to help your brand grow. Whether you're a YouTuber scaling
@@ -29,7 +29,7 @@ const About = () => {
             vision — we're here to bring it to life, frame by frame.
           </p>
         </div>
-        <div className="grid grid-cols-2 sm:mt-4 gap-5">
+        <div className="grid grid-cols-2 mt-8 sm:mt-6 gap-5">
           {[
             { count: "6+", text: "Years of experience" },
             { count: "50+", text: "repeated clients" },

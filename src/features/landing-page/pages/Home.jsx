@@ -123,7 +123,7 @@ const Home = () => {
             you can focus on creating while we handle the rest.
           </p>
         </div>
-        <button className="bg-gradient-to-br from-[#a6e800] to-(--primary-color) text-black px-6 py-3 hover:scale-105 transition-all duration-300">
+        <button className="bg-gradient-to-br from-[#a6e800] to-(--primary-color) text-black px-6 py-3 hover:scale-105 transition-all duration-300 rounded-md shadow shadow-black/10">
           <div>
             <p className="text-sm md:text-base lg:text-lg cursor-pointer font-bold">
               Get Free Consultation
@@ -132,7 +132,11 @@ const Home = () => {
         </button>
 
         {/* arrows icons */}
-        <img className="absolute right-20 size-13 -bottom-14 md:size-20 md:-bottom-18 md:right-42 rotate-90" src="./icons/arrow.svg" alt="arrow" />
+        <img
+          className="absolute right-20 size-13 -bottom-14 md:size-20 md:-bottom-18 md:right-42 rotate-90"
+          src="./icons/arrow.svg"
+          alt="arrow"
+        />
       </div>
     </section>
   );
