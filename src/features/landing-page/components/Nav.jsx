@@ -1,9 +1,13 @@
 import { Menu, X } from "lucide-react";
 import React, { useState } from "react";
-import { Link } from "react-scroll";
+import { Link as ScrollLink } from "react-scroll";
+import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const links = [
     "Home",
@@ -15,34 +19,48 @@ const Nav = () => {
     "Team",
   ];
 
+  const handleNavigation = (section) => {
+    // If already on homepage → scroll normally
+    if (location.pathname === "/") {
+      const element = document.getElementById(section);
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    } else {
+      // If on another page → go home with hash
+      navigate(`/#${section}`);
+    }
+
+    setIsMenuOpen(false);
+  };
+
   return (
     <nav className="w-full max-w-[1280px] mx-auto bg-[#FAFAFA] px-4 py-4 md:px-16 border-b border-black/5 md:py-2.5">
       <div className="flex items-center justify-between">
         {/* Logo */}
-        <div className="text-xl flex flex-col items-center leading-none uppercase">
-          <a className="font-bold text-black" href="#">
-            Zainx
-          </a>
-          <a className="text-lg font-light text-black/70" href="#">
-            Media
-          </a>
-        </div>
+        <RouterLink
+          to="/"
+          className="text-xl flex flex-col items-center leading-none uppercase"
+        >
+          <span className="font-bold text-black">Zainx</span>
+          <span className="text-lg font-light text-black/70">Media</span>
+        </RouterLink>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 items-center">
-          {links.map((link, index) => (
+          {links.map((link) => (
             <li key={link}>
-              <Link
-                smooth={true}
-                duration={index * 300}
-                to={link.toLowerCase()}
+              <button
+                onClick={() => handleNavigation(link.toLowerCase())}
                 className="text-black cursor-pointer hover:text-black transition font-['Inter'] duration-200 relative group"
               >
                 {link}
 
-                {/* Highlight Underline */}
-                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-(--primary-color) transition-all duration-300 group-hover:w-full"></span>
-              </Link>
+                <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[--primary-color] transition-all duration-300 group-hover:w-full"></span>
+              </button>
             </li>
           ))}
         </ul>
@@ -63,20 +81,16 @@ const Nav = () => {
         }`}
       >
         <ul className="flex flex-col items-center gap-5 bg-white rounded-2xl py-6 shadow-sm border border-black/5">
-          {links.map((link,index) => (
+          {links.map((link) => (
             <li key={link}>
-              <Link
-                to={link.toLowerCase()}
-                smooth={true}
-                duration={index * 300}
-                href="#"
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                onClick={() => handleNavigation(link.toLowerCase())}
                 className="text-lg text-black hover:text-black transition relative group"
               >
                 {link}
 
                 <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#b8ff03] transition-all duration-300 group-hover:w-full"></span>
-              </Link>
+              </button>
             </li>
           ))}
         </ul>

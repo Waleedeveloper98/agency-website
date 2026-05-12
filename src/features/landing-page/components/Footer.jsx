@@ -1,4 +1,5 @@
-import { Link } from "react-scroll";
+import { useLocation, useNavigate } from "react-router-dom";
+import { Link as RouterLink } from "react-router-dom";
 
 const navLinks = [
   { label: "Home", to: "home" },
@@ -11,9 +12,9 @@ const navLinks = [
 ];
 
 const otherPages = [
-  "Privacy Policy",
-  "Terms & Conditions",
-  "Refund Policy",
+  { label: "Privacy Policy", to: "/privacy" },
+  { label: "Terms & Conditions", to: "/terms" },
+  { label: "Refund Policy", to: "/refund" },
 ];
 
 const socialLinks = [
@@ -24,21 +25,41 @@ const socialLinks = [
 ];
 
 export default function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavigation = (section) => {
+    // If already on home page
+    if (location.pathname === "/") {
+      const element = document.getElementById(section);
+
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    } else {
+      // Navigate back home with hash
+      navigate(`/#${section}`);
+    }
+  };
+
   return (
     <footer className="secondary-font bg-white border-t border-gray-200 font-sans overflow-hidden">
       {/* Top Grid */}
-      <div className="w-full  max-w-[1280px] mx-auto px-6 sm:px-8 pt-16 pb-10 md:pb-0 md:px-16 flex flex-col gap-16 md:flex-row md:justify-between">
+      <div className="w-full max-w-[1280px] mx-auto px-6 sm:px-8 pt-16 pb-10 md:pb-0 md:px-16 flex flex-col gap-16 md:flex-row md:justify-between">
         {/* LEFT — Logo + socials */}
-        <div className="flex flex-col gap-6  ">
+        <div className="flex flex-col gap-6">
           {/* Logo */}
-          <div className="text-xl w-fit flex flex-col items-center leading-none uppercase">
-            <a className="font-bold text-black" href="#">
-              Zainx
-            </a>
-            <a className="text-lg font-light text-black/70" href="#">
-              Media
-            </a>
-          </div>
+          <RouterLink
+            to="/"
+            className="text-xl w-fit flex flex-col items-center leading-none uppercase"
+          >
+            <span className="font-bold text-black">Zainx</span>
+
+            <span className="text-lg font-light text-black/70">Media</span>
+          </RouterLink>
+
           {/* Social Icons */}
           <div className="flex flex-wrap gap-3">
             {socialLinks.map(({ icon, label, href }) => (
@@ -54,24 +75,22 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className=" flex gap-32 md:gap-40">
+        <div className="flex gap-32 md:gap-40">
           {/* Navigation */}
           <div>
             <h4 className="text-[11px] font-bold tracking-[2px] uppercase text-(--secondary-color) mb-5">
               Navigation
             </h4>
+
             <ul className="flex flex-col gap-3">
-              {navLinks.map(({ label, to,index }) => (
+              {navLinks.map(({ label, to }) => (
                 <li key={to}>
-                  <Link
-                    to={to}
-                    smooth={true}
-                    duration={index*300}
-                    offset={-80}
+                  <button
+                    onClick={() => handleNavigation(to)}
                     className="text-[14.5px] font-medium text-gray-700 cursor-pointer inline-block transition-all duration-200 hover:text-[#b8ff03] hover:translate-x-1"
                   >
                     {label}
-                  </Link>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -82,12 +101,16 @@ export default function Footer() {
             <h4 className="text-[11px] font-bold tracking-[2px] uppercase text-(--secondary-color) mb-5">
               Other Pages
             </h4>
+
             <ul className="flex flex-col gap-3">
               {otherPages.map((page) => (
-                <li key={page}>
-                  <span className="text-[14.5px] font-medium text-gray-700 cursor-pointer inline-block transition-all duration-200 hover:text-[#b8ff03] hover:translate-x-1">
-                    {page}
-                  </span>
+                <li key={page.to}>
+                  <RouterLink
+                    to={page.to}
+                    className="text-[14.5px] font-medium text-gray-700 cursor-pointer inline-block transition-all duration-200 hover:text-[#b8ff03] hover:translate-x-1"
+                  >
+                    {page.label}
+                  </RouterLink>
                 </li>
               ))}
             </ul>
@@ -95,13 +118,9 @@ export default function Footer() {
         </div>
       </div>
 
-
       {/* Big Gradient Text */}
-      <div
-        className="overflow-hidden "
-        style={{ lineHeight: 0.85 }}
-      >
-        <p className="primary-font md:text-[400px] lg:text-[500px]  tracking-[-4px] text-center px-4 bg-gradient-to-b translate-y-20 from-white to-[#b8ff03] bg-clip-text text-transparent">
+      <div className="overflow-hidden" style={{ lineHeight: 0.85 }}>
+        <p className="primary-font md:text-[400px] lg:text-[500px] tracking-[-4px] text-center px-4 bg-gradient-to-b translate-y-20 from-white to-[#b8ff03] bg-clip-text text-transparent">
           ZAINX
         </p>
       </div>
