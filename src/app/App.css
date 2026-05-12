@@ -43,3 +43,6 @@
         animation: marquee-reverse 18s linear infinite;
     }
 }
+body{
+    scroll-behavior: smooth;
+}

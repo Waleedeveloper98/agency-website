@@ -57,7 +57,7 @@ const Home = () => {
   const rows = Math.ceil(window.innerHeight / GRID_SIZE);
 
   return (
-    <section className="relative w-full pb-24 md:pb-0 md:h-screen max-h-[550px] overflow-hidden bg-white flex items-start justify-center pt-20 md:pt-18">
+    <section id="home" className="relative w-full pb-24 md:pb-0 md:h-screen max-h-[550px] overflow-hidden bg-white flex items-start justify-center pt-20 md:pt-18">
       {/* Interactive Grid */}
       <div ref={gridRef} className="absolute inset-0 z-0">
         {Array.from({ length: rows }).map((_, row) =>

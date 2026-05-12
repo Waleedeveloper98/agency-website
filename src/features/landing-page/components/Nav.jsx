@@ -1,5 +1,6 @@
 import { Menu, X } from "lucide-react";
 import React, { useState } from "react";
+import { Link } from "react-scroll";
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,15 +24,17 @@ const Nav = () => {
         <ul className="hidden md:flex gap-12 items-center">
           {links.map((link) => (
             <li key={link}>
-              <a
-                href="#"
-                className="text-black hover:text-black transition font-['Inter'] duration-200 relative group"
+              <Link
+                smooth={true}
+                duration={500}
+                to={link.toLowerCase()}
+                className="text-black cursor-pointer hover:text-black transition font-['Inter'] duration-200 relative group"
               >
                 {link}
 
                 {/* Highlight Underline */}
                 <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-(--primary-color) transition-all duration-300 group-hover:w-full"></span>
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
