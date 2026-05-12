@@ -4,9 +4,9 @@ const About = () => {
   return (
     <section id="about" className="w-full relative max-w-[1280px] mx-auto p-6 flex flex-col gap-13 pt-20 sm:pt-32 pb-16 sm:pb-20 sm:flex-row sm:items-start">
       <div className="sm:w-[30%] sm:sticky sm:top-4">
-        <h3 className="font-['Syne'] text-3xl md:text-4xl font-semibold text-center sm:text-start">About Our Agency</h3>
+        <h3 className="primary-font font-medium text-4xl md:text-5xl text-center sm:text-start">About Our Agency</h3>
       </div>
-      <div className="font-['Inter'] sm:w-[70%] sm:pr-10 flex flex-col gap-6">
+      <div className="secondary-font sm:w-[70%] sm:pr-10 flex flex-col gap-6">
         <h4 className="text-2xl sm:text-3xl md:text-4xl text-(--secondary-color) mb-4">
           We Are Not Just an Agency. We Are Your Creative Partners{" "}
           <span className="text-black">
@@ -38,12 +38,12 @@ const About = () => {
           ].map((item) => (
             <div
               key={item.count}
-              className="relative rounded-xl overflow-hidden flex items-center justify-center flex-col gap-4 mb-2"
+              className="relative rounded-xl overflow-hidden flex items-center justify-center flex-col gap-4 md:gap-1 mb-2 md:mb-6"
             >
-              <h5 className="text-5xl md:text-6xl font-['Syne'] font-bold bg-gradient-to-r from-[#b8ff03] to-[#9ee100] text-transparent bg-clip-text opacity-45 z-0">
+              <h5 className="text-6xl md:text-7xl primary-font font-medium bg-gradient-to-r from-[#b8ff03] to-[#9ee100] text-transparent bg-clip-text opacity-45 z-0">
                 {item.count}
               </h5>
-              <h4 className="font-['Syne'] text-xs md:text-lg whitespace-nowrap font-bold text-center leading-none uppercase">
+              <h4 className="primary-font text-base md:text-2xl whitespace-nowrap font-normal text-center leading-none uppercase">
                 {item.text}
               </h4>
             </div>

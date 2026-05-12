@@ -34,15 +34,15 @@ const servicesData = [
 
 const Services = () => {
   return (
-    <section id="services" className="font-['Inter'] w-full max-w-[1200px]  relative mx-auto px-5 py-10 sm:py-20 flex flex-col gap-16">
-      <div className="content flex flex-col items-center gap-y-4 text-center">
+    <section id="services" className="secondary-font w-full max-w-[1200px]  relative mx-auto px-5 py-10 sm:py-20 flex flex-col gap-16">
+      <div className="content flex flex-col items-center gap-y-4 md:gap-y-10 text-center">
         <div>
-          <h6 className="bg-neutral-100 px-4 py-2 shadow-sm shadow-black/10 font-['Syne'] text-xl sm:text-2xl md:text-3xl font-bold">
+          <h6 className="bg-neutral-100 px-4 py-2 shadow-sm shadow-black/10 primary-font text-xl sm:text-2xl md:text-3xl font-medium">
             Services
           </h6>
         </div>
         <div>
-          <h2 className="font-['Syne'] font-bold text-2xl md:text-3xl">
+          <h2 className="primary-font font-medium text-2xl md:text-4xl lg:text-5xl">
             Services That Speak for Themselves
           </h2>
         </div>
@@ -55,7 +55,7 @@ const Services = () => {
         </div>
       </div>
 
-      <div className="content h-[300vh] lg:h-[340vh] relative">
+      <div className="content h-[300vh] md:h-[150vh] lg:h-[340vh] relative">
         {servicesData.map((data, idx) => (
           <ServiceCard key={idx} data={data} idx={idx} />
         ))}

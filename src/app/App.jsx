@@ -7,6 +7,7 @@ import Lenis from "lenis";
 import About from "../features/landing-page/pages/About";
 import Faq from "../features/landing-page/pages/Faq";
 import Services from "../features/landing-page/pages/Services";
+import Testimonial from "../features/landing-page/pages/Testimonial";
 
 const App = () => {
   useEffect(() => {
@@ -22,12 +23,13 @@ const App = () => {
   return (
     <>
       <Nav />
-      <main className="w-full  max-w-[1200px] mx-auto">
+      <main className="w-full  max-w-[1280px] mx-auto">
         <Home />
         <ReelsMarqueContainer />
         <About />
         <Services />
         <Faq />
+        <Testimonial />
       </main>
     </>
   );

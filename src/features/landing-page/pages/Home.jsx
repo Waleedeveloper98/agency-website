@@ -1,6 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
+import ReviewTag from "../components/ReviewTag";
 
 const GRID_SIZE = 40;
+const avatars = [
+  "https://i.pravatar.cc/100?img=1",
+  "https://i.pravatar.cc/100?img=2",
+  "https://i.pravatar.cc/100?img=3",
+  "https://i.pravatar.cc/100?img=4",
+];
 
 const Home = () => {
   const gridRef = useRef(null);
@@ -57,7 +64,10 @@ const Home = () => {
   const rows = Math.ceil(window.innerHeight / GRID_SIZE);
 
   return (
-    <section id="home" className="relative w-full pb-24 md:pb-0 md:h-screen max-h-[550px] overflow-hidden bg-white flex items-start justify-center pt-20 md:pt-18">
+    <section
+      id="home"
+      className="relative w-full pb-24 md:pb-0 md:h-screen max-h-[550px] overflow-hidden bg-white flex items-start justify-center pt-20 md:pt-14"
+    >
       {/* Interactive Grid */}
       <div ref={gridRef} className="absolute inset-0 z-0">
         {Array.from({ length: rows }).map((_, row) =>
@@ -102,30 +112,37 @@ const Home = () => {
       />
 
       {/* Content */}
-      <div className="relative font-['Syne'] z-10 text-center px-15 flex flex-col items-center gap-8">
+      <div className="relative primary-font z-10 text-center px-15  flex flex-col items-center gap-8">
+        {/* reviews */}
+        <ReviewTag
+          images={avatars}
+          maxVisible={3}
+          rating="5/5"
+          text="Happy Clients"
+        />
         {/* heading */}
         <div className="flex flex-col md:gap-2">
           <div className="max-w-5/5 mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl  font-bold pointer-events-none text-shadow-black/10 text-shadow-lg">
+            <h1 className="text-5xl font-medium sm:text-5xl md:text-6xl lg:text-8xl  font-bold pointer-events-none text-shadow-black/10 text-shadow-lg md:leading-20">
               We Edit Videos
             </h1>
           </div>
           <div className="max-w-5/5 mx-auto">
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold pointer-events-none text-shadow-black/10 text-shadow-lg">
+            <h1 className="text-5xl font-medium sm:text-5xl md:text-6xl lg:text-8xl font-bold pointer-events-none text-shadow-black/10 text-shadow-lg md:leading-20">
               Build Audiences
             </h1>
           </div>
         </div>
         {/* subheading */}
         <div className="max-w-xl">
-          <p className="pointer-events-none font-['Inter'] text-(--secondary-color) text-sm sm:text-base">
+          <p className="pointer-events-none secondary-font text-(--secondary-color) text-xs sm:text-base">
             We edit your videos into scroll-stopping, high-retention content so
             you can focus on creating while we handle the rest.
           </p>
         </div>
         <button className="bg-gradient-to-br from-[#a6e800] to-(--primary-color) text-black px-6 py-3 hover:scale-105 transition-all duration-300 rounded-md shadow shadow-black/10">
           <div>
-            <p className="text-sm md:text-base lg:text-lg cursor-pointer font-bold">
+            <p className="text-sm md:text-base lg:text-lg cursor-pointer secondary-font font-semibold">
               Get Free Consultation
             </p>
           </div>

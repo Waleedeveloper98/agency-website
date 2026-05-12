@@ -8,7 +8,7 @@ const Nav = () => {
   const links = ["Home", "About", "Services", "Contact"];
 
   return (
-    <nav className="w-full max-w-[1280px] mx-auto bg-[#FAFAFA] px-4 py-4 md:px-16 border-b border-black/5">
+    <nav className="w-full max-w-[1280px] mx-auto bg-[#FAFAFA] px-4 py-4 md:px-16 border-b border-black/5 md:py-2.5">
       <div className="flex items-center justify-between">
         {/* Logo */}
         <div className="text-xl flex flex-col items-center leading-none uppercase">

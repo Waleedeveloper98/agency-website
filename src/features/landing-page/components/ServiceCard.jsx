@@ -15,14 +15,14 @@ const ServiceCard = ({ data }) => {
       </div>
 
       <div className="details-part md:w-[60%] pb-5 flex flex-col gap-2 md:gap-4">
-        <p className="font-['Inter'] text-sm border border-(--secondary-color) size-7 rounded-full flex items-center justify-center cursor-pointer hover:bg-(--primary-color) transition-colors duration-200 ease-in-out">
+        <p className="secondary-font text-sm border border-(--secondary-color) size-7 rounded-full flex items-center justify-center cursor-pointer hover:bg-(--primary-color) transition-colors duration-200 ease-in-out">
           {number}
         </p>
-        <div className="font-['Syne'] font-medium text-2xl md:text-3xl lg:text-4xl pointer-events-none select-none">
+        <div className="primary-font font-medium text-3xl md:text-3xl lg:text-5xl pointer-events-none select-none">
           <h3>{heading}</h3>
         </div>
 
-        <div className="font-['Inter'] pr-6 pointer-events-none md:pr-20">
+        <div className="secondary-font pr-6 pointer-events-none md:pr-20">
           <p className="text-sm text-(--secondary-color) select-none md:text-base md:text-justify">
             {paragraph}
           </p>

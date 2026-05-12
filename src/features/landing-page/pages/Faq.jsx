@@ -49,7 +49,7 @@ const Faq = () => {
 
   return (
     <div className="max-w-5xl mx-auto py-10 md:pt-18 pb-20 px-4 flex flex-col gap-2">
-      <h2 className="font-['Syne'] text-center mb-8 md:mb-14 text-2xl sm:text-3xl md:text-4xl font-bold px-10">Curious? Check Out the (FAQs)</h2>
+      <h2 className="primary-font font-medium text-center mb-8 md:mb-14 text-2xl sm:text-3xl md:text-4xl lg:text-5xl px-10">Curious? Check Out the (FAQs)</h2>
       {faqData.map((item, index) => {
         const isOpen = openIndex === index;
         const isHovered = hoveredIndex === index;
@@ -64,7 +64,7 @@ const Faq = () => {
               className="w-full flex items-center justify-between px-8 py-4 md:py-6 text-left cursor-pointer"
             >
               <span
-                className="text-lg md:text-xl font-medium font-['Inter'] transition-all duration-300"
+                className="text-lg md:text-xl font-medium secondary-font transition-all duration-300"
                 style={{
                   transform: isHovered ? "translateX(10px)" : "translateX(0px)",
                   color: isHovered ? "#84cc16" : "#1a1a1a",
