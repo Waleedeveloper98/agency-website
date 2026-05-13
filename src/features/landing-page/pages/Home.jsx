@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import ReviewTag from "../components/ReviewTag";
+import { Link } from "react-scroll";
 
 const GRID_SIZE = 40;
 const avatars = [
@@ -131,7 +132,9 @@ const Home = () => {
             <h1 className="text-5xl font-medium sm:text-5xl md:text-6xl lg:text-8xl font-bold pointer-events-none text-shadow-black/10 text-shadow-lg md:leading-20">
               Build
             </h1>
-            <h1 className="secondary-font italic font-extralight text-4xl md:text-6xl lg:text-7xl">Audience</h1>
+            <h1 className="secondary-font italic font-extralight text-4xl md:text-6xl lg:text-7xl">
+              Audience
+            </h1>
           </div>
         </div>
         {/* subheading */}
@@ -142,11 +145,11 @@ const Home = () => {
           </p>
         </div>
         <button className="bg-gradient-to-br from-[#a6e800] to-(--primary-color) text-white px-6 py-3 hover:scale-105 transition-all duration-300 rounded-md shadow shadow-black/10">
-          <div>
+          <Link to="contact" smooth={true} duration={900} offset={200}>
             <p className="text-sm md:text-base lg:text-lg cursor-pointer secondary-font font-semibold">
               Get Free Consultation
             </p>
-          </div>
+          </Link>
         </button>
 
         {/* arrows icons */}

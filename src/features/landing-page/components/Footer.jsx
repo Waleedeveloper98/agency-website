@@ -18,10 +18,9 @@ const otherPages = [
 ];
 
 const socialLinks = [
-  { icon: "ri-twitter-x-line", label: "Twitter", href: "#" },
-  { icon: "ri-instagram-line", label: "Instagram", href: "#" },
-  { icon: "ri-linkedin-box-line", label: "LinkedIn", href: "#" },
-  { icon: "ri-youtube-line", label: "YouTube", href: "#" },
+  { icon: "ri-instagram-line", label: "Instagram", href: "https://www.instagram.com/zainxmedia/" },
+  { icon: "ri-linkedin-box-line", label: "LinkedIn", href: "https://pk.linkedin.com/company/zainx-media" },
+  { icon: "ri-youtube-line", label: "YouTube", href: "https://www.youtube.com/@ZainxMedia" },
 ];
 
 export default function Footer() {
@@ -66,6 +65,7 @@ export default function Footer() {
               <a
                 key={label}
                 href={href}
+                target="_blank"
                 aria-label={label}
                 className="w-10 h-10 rounded-xl border border-gray-200 bg-white flex items-center justify-center text-gray-500 transition-all duration-200 hover:bg-[#b8ff03] hover:border-[#b8ff03] hover:text-black hover:-translate-y-0.5 hover:shadow-[0_6px_18px_rgba(184,255,3,0.4)]"
               >
