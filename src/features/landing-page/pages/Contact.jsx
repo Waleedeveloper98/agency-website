@@ -202,6 +202,7 @@ const Contact = () => {
               src="./images/formimg.webp"
               alt="Marketing expert"
               className="w-full object-cover object-top"
+              loading="lazy"
             />
           </div>
         </div>

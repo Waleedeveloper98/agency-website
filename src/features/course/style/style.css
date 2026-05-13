@@ -1,0 +1,26 @@
+:root {
+    --accent: #b8ff03;
+}
+
+::selection {
+    background: var(--accent);
+    color: black;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #999;
+}
