@@ -59,3 +59,65 @@ body {
     color: white;
     background-color: #a0df03;
 }
+
+.launch-ai-btn {
+    animation: floatingCTA 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+}
+
+.launch-ai-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 0 40px rgba(184, 255, 3, 0.7);
+}
+
+@keyframes floatingCTA {
+    0% {
+        transform: translateY(0px) scale(1);
+        box-shadow: 0 0 0 rgba(184, 255, 3, 0.4);
+    }
+
+    25% {
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 0 25px rgba(184, 255, 3, 0.5);
+    }
+
+    50% {
+        transform: translateY(0px) scale(1);
+        box-shadow: 0 0 10px rgba(184, 255, 3, 0.3);
+    }
+
+    75% {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 0 30px rgba(184, 255, 3, 0.6);
+    }
+
+    100% {
+        transform: translateY(0px) scale(1);
+        box-shadow: 0 0 0 rgba(184, 255, 3, 0.4);
+    }
+}
+
+/* Shine Animation */
+.shine {
+    position: absolute;
+    top: 0;
+    left: -120%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(120deg,
+            transparent,
+            rgba(197, 234, 155, 0.7),
+            transparent);
+    transform: skewX(-20deg);
+    animation: shineMove 3s linear infinite;
+}
+
+@keyframes shineMove {
+    0% {
+        left: -120%;
+    }
+
+    100% {
+        left: 140%;
+    }
+}

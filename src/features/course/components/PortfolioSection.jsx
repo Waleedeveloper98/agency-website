@@ -5,26 +5,25 @@ const PortfolioSection = () => {
     {
       title: "Luxury Watch Commercial",
       type: "AI Cinematic Video",
-      image:
-        "https://images.unsplash.com/photo-1547996160-81dfa63595dd?auto=format&fit=crop&q=80&w=800",
+      image: "./images/watch.webp",
     },
     {
       title: "Gourmet Coffee Shoot",
       type: "AI Product Photography",
       image:
-        "https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&q=80&w=800",
+        "./images/coffee.webp",
     },
     {
       title: "Skincare UGC Ad",
       type: "AI Digital Human",
       image:
-        "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800",
+        "./images/skincare.webp",
     },
     {
       title: "Sneaker Drop Teaser",
       type: "AI 3D Animation",
       image:
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&q=80&w=800",
+        "./images/sneaker.webp",
     },
   ];
 
@@ -65,7 +64,9 @@ const PortfolioSection = () => {
                 <span className="text-(--primary-color) font-semibold uppercase tracking-widest text-sm mb-2 block">
                   {project.type}
                 </span>
-                <h3 className="text-2xl sm:text-3xl font-bold pr-4">{project.title}</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold pr-4">
+                  {project.title}
+                </h3>
               </div>
             </AnimatedSection>
           ))}

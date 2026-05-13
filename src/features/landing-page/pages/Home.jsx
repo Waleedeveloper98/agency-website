@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import ReviewTag from "../components/ReviewTag";
 import { Link } from "react-scroll";
+import SpecialButton from "../components/SpecialButton";
 
 const GRID_SIZE = 40;
 const avatars = [
@@ -67,7 +68,7 @@ const Home = () => {
   return (
     <section
       id="home"
-      className="relative w-full pb-24 md:pb-0 md:h-screen max-h-[550px] overflow-hidden bg-white flex items-start justify-center pt-20 md:pt-14"
+      className="relative w-full pb-24 md:pb-48 md:h-screen max-h-[650px] overflow-hidden bg-white flex items-start justify-center pt-20 md:pt-14"
     >
       {/* Interactive Grid */}
       <div ref={gridRef} className="absolute inset-0 z-0">
@@ -144,17 +145,20 @@ const Home = () => {
             you can focus on creating while we handle the rest.
           </p>
         </div>
-        <button className="bg-gradient-to-br from-[#a6e800] to-(--primary-color) text-white px-6 py-3 hover:scale-105 transition-all duration-300 rounded-md shadow shadow-black/10">
-          <Link to="contact" smooth={true} duration={900} offset={200}>
-            <p className="text-sm md:text-base lg:text-lg cursor-pointer secondary-font font-semibold">
-              Get Free Consultation
-            </p>
-          </Link>
-        </button>
+        <div className="flex flex-col gap-8 md:flex-row">
+          <SpecialButton />
+          <button className="bg-neutral-50/50 text-black px-6 py-3 hover:scale-105 transition-all duration-300 rounded-md shadow shadow-black/10">
+            <Link to="contact" smooth={true} duration={900} offset={200}>
+              <p className="text-sm md:text-base lg:text-lg cursor-pointer secondary-font font-semibold">
+                Get Free Consultation
+              </p>
+            </Link>
+          </button>
+        </div>
 
         {/* arrows icons */}
         <img
-          className="absolute right-20 size-13 -bottom-14 md:size-20 md:-bottom-18 md:right-42 rotate-90"
+          className="absolute right-14 size-13 bottom-5 md:size-20 md:-bottom-28 md:left-18 rotate-90 md:rotate-180 lg:-left-5 lg:bottom-12 lg:-rotate-85"
           src="./icons/arrow.svg"
           alt="arrow"
         />

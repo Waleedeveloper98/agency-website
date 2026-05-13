@@ -30,7 +30,7 @@ const HeroSection = () => {
         <AnimatedSection delay={0.2}>
           <h1 className="primary-font text-5xl md:text-8xl font-black mb-8  text-balance">
             Learn AI Ads in{" "}
-            <span className="text-(--primary-color) shadow shadow-black/10">
+            <span className="text-(--primary-color)">
               30 Days
             </span>
             <br />
