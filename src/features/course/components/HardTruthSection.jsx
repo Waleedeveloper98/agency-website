@@ -1,5 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import { AlertCircle, Clock, TrendingDown, DollarSign } from "lucide-react";
+import ColorHeading from "./ColorHeading";
 
 const HardTruthSection = () => {
   const truths = [
@@ -40,7 +41,7 @@ const HardTruthSection = () => {
             <AnimatedSection>
               <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-none mb-6">
                 The uncomfortable <br />
-                <span className="text-(--primary-color)">Hard Truth.</span>
+                <ColorHeading text="Hard Truth." />
               </h2>
             </AnimatedSection>
           </div>

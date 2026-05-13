@@ -1,5 +1,6 @@
 import AnimatedSection from './AnimatedSection';
 import { Gift, FileText, Smartphone, Layout } from 'lucide-react';
+import ColorHeading from './ColorHeading';
 
 const BonusesSection = () => {
   const bonuses = [
@@ -34,7 +35,7 @@ const BonusesSection = () => {
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-20">
           <h2 className="text-4xl md:text-7xl font-bold mb-6">
-            Insane <span className="text-(--primary-color)">Bonuses</span>
+            Insane <ColorHeading text="Bonuses"/>
           </h2>
           <p className="text-2xl text-gray-400 font-semibold">Total Value: PKR 14,000+ Included FREE</p>
         </AnimatedSection>

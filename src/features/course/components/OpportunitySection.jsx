@@ -1,5 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import { Camera, Video, UserCheck, Mic, ArrowRight } from "lucide-react";
+import ColorHeading from "./ColorHeading";
 
 const OpportunitySection = () => {
   const opps = [
@@ -35,7 +36,7 @@ const OpportunitySection = () => {
         <div className="text-center mb-20">
           <AnimatedSection>
             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-[0.9] mb-6">
-              Modern Income Opportunities
+              Modern Income <ColorHeading text={"Opportunities"}/>
             </h2>
             <p className="text-xl text-(--secondary-color) font-medium max-w-2xl mx-auto">
               Brands are desperate for high-quality content. Here's what you can

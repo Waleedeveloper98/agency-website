@@ -1,5 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import { X, Check, ArrowRight } from "lucide-react";
+import ColorHeading from "./ColorHeading";
 
 const ComparisonSection = () => {
   return (
@@ -7,7 +8,7 @@ const ComparisonSection = () => {
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-20">
           <h2 className="text-4xl md:text-7xl font-bold mb-6">
-            The New Era of Advertising
+            The New Era of <ColorHeading text={"Advertising"}/>
           </h2>
           <p className="text-xl text-(--secondary-color) font-medium">
             Why AI always beats the manual workflow.

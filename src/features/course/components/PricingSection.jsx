@@ -1,4 +1,5 @@
 import AnimatedSection from "./AnimatedSection";
+import ColorHeading from "./ColorHeading";
 import CountdownTimer from "./CountdownTimer";
 import { Check, ArrowRight, ShieldCheck, Zap } from "lucide-react";
 
@@ -12,9 +13,7 @@ const PricingSection = () => {
         <AnimatedSection className="text-center mb-16">
           <h2 className="text-4xl md:text-8xl font-bold  mb-6">
             Invest in your <br />
-            <span className="text-(--primary-color) underline decoration-8 underline-offset-10">
-              Future Self.
-            </span>
+            <ColorHeading text={"Future Self."}/>
           </h2>
           <p className="text-xl text-gray-500 font-medium max-w-xl mx-auto my-10">
             This isn't a cost. it's the capital for your AI agency.

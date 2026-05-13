@@ -3,6 +3,7 @@ import {
   Sparkles,
   Play,
   Users,
+  Video,
   Calendar,
   Banknote,
   ArrowRight,
@@ -12,37 +13,45 @@ import { Link } from "react-scroll";
 
 const HeroSection = () => {
   return (
-    <section className="relative pt-28 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden">
+    <section className="relative pt-24 pb-20 md:pt-26 md:pb-32 px-6 overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-accent/5 rounded-md blur-[120px]" />
-        <div className="absolute bottom-[20%] right-[-5%] w-[30%] h-[30%] bg-accent/10 rounded-md blur-[100px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-(--primary-color)/5 rounded-md blur-[120px]" />
+        <div className="absolute bottom-[20%] right-[-5%] w-[30%] h-[30%] bg-(--primary-color)/10 rounded-md blur-[100px]" />
       </div>
 
       <div className="max-w-7xl mx-auto relative z-10 text-center">
         <AnimatedSection delay={0.1}>
-          <div className="inline-flex items-center gap-2 bg-black text-white px-4 py-1.5 rounded-md text-sm font-bold mb-8">
-            <Sparkles className="text-accent" size={16} />
-            <span>Next Cohort Starts June 1st</span>
+          <div className="inline-flex select-none items-center gap-2 bg-black text-white px-4 py-1.5 rounded-md text-sm font-bold mb-8">
+            <Sparkles className="text-accent rotate-anim" size={16} />
+            <span>Next Cohort Starts</span>
           </div>
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <h1 className="primary-font text-5xl md:text-8xl font-black mb-8  text-balance">
-            Learn AI Ads in{" "}
-            <span className="text-(--primary-color)">
-              30 Days
-            </span>
+          <h1 className="primary-font text-4xl md:text-7xl font-black mb-8  text-balance">
+            Learn Generative Ai in{" "}
+            <span className="text-(--primary-color)">30 Days</span>
             <br />
             Get Paid By Brands
           </h1>
         </AnimatedSection>
-
-        <AnimatedSection delay={0.3}>
-          <p className="text-lg md:text-2xl text-gray-500 max-w-3xl mx-auto mb-12 font-medium leading-relaxed text-balance px-4">
-            Create AI product ads, UGC videos, AI commercials and Urdu
-            voiceovers even if you’re starting from zero.
-          </p>
+        {/* Hero Visual Mockup (Simulated) */}
+        <AnimatedSection delay={0.6} className=" max-w-3xl mx-auto px-4">
+          <div className="relative aspect-video bg-gray-100 rounded-2xl overflow-hidden border-4 md:border-8 border-white shadow-2xl mb-10">
+            <img
+              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=2000"
+              alt="AI Ads Visualization"
+              className="w-full h-full object-cover opacity-80"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-16 h-16 md:h-20 md:w-20 bg-accent rounded-full flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform bg-(--primary-color)">
+                <Play fill="black" size={28} className="ml-1" />
+              </div>
+            </div>
+          </div>
         </AnimatedSection>
 
         <AnimatedSection
@@ -69,10 +78,22 @@ const HeroSection = () => {
           </Link>
         </AnimatedSection>
 
+        <AnimatedSection delay={0.3}>
+          <p className="text-lg md:text-2xl text-gray-500 max-w-3xl mx-auto mb-12 font-medium leading-relaxed text-balance px-4">
+            Create AI product ads, UGC videos, AI commercials and Urdu
+            voiceovers even if you’re starting from zero.
+          </p>
+        </AnimatedSection>
+
         <AnimatedSection delay={0.5}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              { icon: Users, label: "75 Seats Only", sub: "Strictly limited" },
+              // { icon: Users, label: "75 Seats Only", sub: "Strictly limited" },
+              {
+                icon: Video,
+                label: "Recorded Lectures",
+                sub: "Access anytime after class",
+              },
               {
                 icon: Calendar,
                 label: "12 Live Classes",
@@ -96,24 +117,6 @@ const HeroSection = () => {
           </div>
         </AnimatedSection>
       </div>
-
-      {/* Hero Visual Mockup (Simulated) */}
-      <AnimatedSection delay={0.6} className="mt-20 max-w-6xl mx-auto px-4">
-        <div className="relative aspect-video bg-gray-100 rounded-2xl overflow-hidden border-4 md:border-8 border-white shadow-2xl">
-          <img
-            src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=2000"
-            alt="AI Ads Visualization"
-            className="w-full h-full object-cover opacity-80"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="w-16 h-16 md:h-20 md:w-20 bg-accent rounded-full flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform bg-(--primary-color)">
-              <Play fill="black" size={28} className="ml-1" />
-            </div>
-          </div>
-        </div>
-      </AnimatedSection>
     </section>
   );
 };

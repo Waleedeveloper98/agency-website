@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import AnimatedSection from "./AnimatedSection";
 import { Plus, Minus } from "lucide-react";
+import ColorHeading from "./ColorHeading";
 
 const FAQSection = () => {
   const [openIndex, setOpenIndex] = useState(0);
@@ -34,7 +35,7 @@ const FAQSection = () => {
       <div className="max-w-4xl mx-auto">
         <AnimatedSection className="text-center mb-20">
           <h2 className="text-4xl md:text-7xl font-bold mb-4">
-            Common Questions
+            Common <ColorHeading text={"Questions"}/>
           </h2>
           <p className="text-xl text-gray-500 font-medium">
             Everything you need to know before joining.

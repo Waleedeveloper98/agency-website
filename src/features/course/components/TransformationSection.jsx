@@ -1,5 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import { motion } from "motion/react";
+import ColorHeading from "./ColorHeading";
 
 const TransformationSection = () => {
   const steps = [
@@ -35,7 +36,7 @@ const TransformationSection = () => {
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-24">
           <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-[0.9] mb-6">
-            The 30-Day <span className="text-accent">Evolution</span>
+            The 30 Day <ColorHeading text={"Evolution"}/>
           </h2>
           <p className="text-xl text-gray-400 font-medium">
             From total beginner to specialized AI Creator.

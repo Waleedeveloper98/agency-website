@@ -1,5 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import { ShieldCheck } from "lucide-react";
+import ColorHeading from "./ColorHeading";
 
 const GuaranteeSection = () => {
   return (
@@ -9,11 +10,9 @@ const GuaranteeSection = () => {
           <div className="w-24 h-24 bg-(--primary-color) rounded-full flex items-center justify-center mb-10 shadow-[0_10px_30px_rgba(184,255,3,0.3)]">
             <ShieldCheck size={48} className="text-black" />
           </div>
-          <h2 className="text-4xl md:text-6xl font-bold  mb-8 ">
+          <h2 className="text-4xl md:text-6xl md:px-20 font-bold  mb-8 ">
             The Zainx <br />{" "}
-            <span className="text-(--primary-color) underline decoration-[6px]">
-              100% Refund
-            </span>{" "}
+            <ColorHeading text={"100% Refund"}/> {" "}
             Guarantee.
           </h2>
           <p className="text-xl text-gray-500 font-medium leading-relaxed max-w-2xl">

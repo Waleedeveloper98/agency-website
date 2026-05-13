@@ -1,5 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import { Layers, Zap, Monitor, Globe, Mail, Search } from "lucide-react";
+import ColorHeading from "./ColorHeading";
 
 const MasterySection = () => {
   const topics = [
@@ -43,9 +44,7 @@ const MasterySection = () => {
             <AnimatedSection>
               <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-[0.9] mb-6">
                 What you will <br />
-                <span className="text-black bg-(--primary-color) px-4 rotate-[-1deg] inline-block">
-                  Master
-                </span>
+                <ColorHeading text="Master" />
               </h2>
               <p className="text-xl text-(--secondary-color) font-medium max-w-xl">
                 We don't just teach tools. We teach a complete business system

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import AnimatedSection from "./AnimatedSection";
 import { CheckCircle2, ChevronRight } from "lucide-react";
+import ColorHeading from "./ColorHeading";
 
 const CourseStructure = () => {
   const [activeWeek, setActiveWeek] = useState(0);
@@ -9,46 +10,38 @@ const CourseStructure = () => {
   const curriculum = [
     {
       week: "Week 01",
-      title: "AI Product Photography",
+      title: "AI Product Photography & Static Ads",
       topics: [
-        "Midjourney for Product Placement",
-        "Environmental Consistency",
-        "Lighting & Texture Manipulation",
-        "AI Upscaling for High-Res Output",
-        "Photoshop Generative Fill Integration",
+        "AI Product Photography, Colorgrade & Cinematography (Practical one brand complete photoshoot)",
+        "AI Photoshoot for Clothing Brands with Consistancy (One brand practical photoshoot)",
+        "Live Q/A on AI Photography Slops and Consistancy",
       ],
     },
     {
       week: "Week 02",
-      title: "Cinematic Product Video",
+      title: "AI Videography & Commercials for Brands",
       topics: [
-        "Video Prompt Engineering",
-        "Luma & Runway Workflows",
-        "Controlling Camera Movement via AI",
-        "Product In-Painting with AI",
-        "Dynamic Transitions without Premiere",
+        "AI Videography for Brands (Practical 1 AI personal avatar reel)",
+        "AI Commercials (Practical one commercial for any brand)",
+        "Live Q&A on Videography Slops",
       ],
     },
     {
       week: "Week 03",
-      title: "Digital Humans & Audio",
+      title: "AI Video & UGC Content",
       topics: [
-        "Talking Head AI Ad Structures",
-        "HeyGen Video Generation",
-        "Clone your voice with ElevenLabs",
-        "Urdu Scripting & Voice Correction",
-        "Syncing Audio & Video perfectly",
+        "Create your First AI Influencer (Practical replica of one famous influencer)",
+        "Create your First UGC Ad (Practical one ugc for product)",
+        "Live Q&A on AI Influencer Common Issues and UGC Video Errors",
       ],
     },
     {
       week: "Week 04",
-      title: "The Client Machine",
+      title: "Portfolio, and How to get Clients",
       topics: [
-        "Portfolio Website Setup",
-        "Upwork & LinkedIn Pitching",
-        "Pricing your AI packages",
-        "Managing Client Feedback Loop",
-        "Scale: Hiring your first assistant",
+        "Meta Ads",
+        "Linkedin Cold DM’s",
+        "Live Q&A on How to get clients",
       ],
     },
   ];
@@ -58,8 +51,7 @@ const CourseStructure = () => {
       <div className="max-w-5xl mx-auto">
         <AnimatedSection className="text-center mb-16">
           <h2 className="text-4xl md:text-7xl font-bold mb-4">
-            Interactive{" "}
-            <span className="text-(--primary-color)">Curriculum</span>
+            Interactive <ColorHeading text="Curriculum" />
           </h2>
           <p className="text-xl text-(--secondary-color) font-medium">
             12 Live Classes. 4 Capstone Projects. Lifetime Support.
@@ -115,11 +107,11 @@ const CourseStructure = () => {
                     initial={{ opacity: 0, x: 10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="flex items-center gap-4 text-lg font-bold"
+                    className="flex items-center gap-4 text-sm md:text-lg font-medium"
                   >
                     <CheckCircle2
-                      className="text-(--primary-color)"
-                      size={24}
+                      className="text-(--primary-color) shrink-0  "
+                      size={20}
                     />
                     {topic}
                   </motion.li>

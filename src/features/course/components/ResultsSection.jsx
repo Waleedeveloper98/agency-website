@@ -1,5 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import { Star, Quote } from "lucide-react";
+import ColorHeading from "./ColorHeading";
 
 const ResultsSection = () => {
   const reviews = [
@@ -28,7 +29,7 @@ const ResultsSection = () => {
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-20">
           <h2 className="text-4xl md:text-7xl font-bold mb-6">
-            Real Proof. Real Results.
+            Real Proof. <ColorHeading text={"Real Results."}/>
           </h2>
           <p className="text-xl text-(--secondary-color) font-medium">
             Join 500+ professionals who have already UPGRADED.

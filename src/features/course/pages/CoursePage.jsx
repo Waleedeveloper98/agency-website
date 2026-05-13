@@ -20,6 +20,7 @@ import Footer from "../components/Footer";
 import FloatingWhatsApp from "../components/FloatingWhatsApp";
 import StickyMobileCTA from "../components/StickyMobileCTA";
 import PricingSection from "../components/PricingSection";
+import PaymentDetails from "../components/PaymentDetails";
 
 const CoursePage = () => {
   return (
@@ -39,6 +40,7 @@ const CoursePage = () => {
         <BonusesSection />
         <AudienceSection />
         <PricingSection />
+        <PaymentDetails />
         <GuaranteeSection />
         <FAQSection />
         <FinalCTA />
