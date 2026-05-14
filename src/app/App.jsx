@@ -8,6 +8,7 @@ import Refund from "../features/landing-page/pages/Refund";
 import Terms from "../features/landing-page/pages/Terms";
 import CoursePage from "../features/course/pages/CoursePage";
 import CourseProject from "../features/course/pages/CourseProject";
+import NotFound from "../shared/pages/NotFound";
 
 const App = () => {
   useEffect(() => {
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/refund" element={<Refund />} />
           <Route path="/bootcamp" element={<CoursePage />} />
           <Route path="/project/:slug" element={<CourseProject />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </main>
     </>
