@@ -1,5 +1,5 @@
 import { Rocket } from "lucide-react";
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { Link } from "react-scroll";
 
@@ -7,13 +7,13 @@ const Footer = () => {
   const socialLinks = [
     {
       name: "Instagram",
-      url: "https://www.instagram.com/",
+      url: "https://www.instagram.com/zainxmedia/",
       icon: FaInstagram,
     },
     {
-      name: "Twitter",
-      url: "https://www.twitter.com/",
-      icon: FaTwitter,
+      name: "LinkedIn",
+      url: "https://pk.linkedin.com/company/zainx-media",
+      icon: FaLinkedin,
     },
   ];
   return (

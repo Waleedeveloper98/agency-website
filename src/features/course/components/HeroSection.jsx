@@ -13,7 +13,7 @@ import { Link } from "react-scroll";
 
 const HeroSection = () => {
   return (
-    <section className="relative pt-24 pb-20 md:pt-26 md:pb-32 px-6 overflow-hidden">
+    <section className="relative pt-24 pb-20 md:pt-6 md:pb-32 px-6 overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] pointer-events-none">
         <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-(--primary-color)/5 rounded-md blur-[120px]" />
@@ -22,14 +22,14 @@ const HeroSection = () => {
 
       <div className="max-w-7xl mx-auto relative z-10 text-center">
         <AnimatedSection delay={0.1}>
-          <div className="inline-flex select-none items-center gap-2 bg-black text-white px-4 py-1.5 rounded-md text-sm font-bold mb-8">
-            <Sparkles className="text-accent rotate-anim" size={16} />
+          <div className="inline-flex select-none items-center gap-2 bg-black text-white px-4 py-1.5 rounded-md text-sm font-bold mb-8 md:mb-3 md:text-xs">
+            <Sparkles className="text-(--primary-color) rotate-anim" size={16} />
             <span>Next Cohort Starts</span>
           </div>
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <h1 className="primary-font text-4xl md:text-7xl font-black mb-8  text-balance">
+          <h1 className="primary-font text-4xl md:text-[4.2rem] md:w-[60%] md:mx-auto font-black mb-8 md:mb-0">
             Learn Generative Ai in{" "}
             <span className="text-(--primary-color)">30 Days</span>
             <br />
@@ -37,7 +37,7 @@ const HeroSection = () => {
           </h1>
         </AnimatedSection>
         {/* Hero Visual Mockup (Simulated) */}
-        <AnimatedSection delay={0.6} className=" max-w-3xl mx-auto px-4">
+        <AnimatedSection delay={0.6} className=" max-w-[44rem] mx-auto px-4">
           <div className="relative aspect-video bg-gray-100 rounded-2xl overflow-hidden border-4 md:border-8 border-white shadow-2xl mb-10">
             <img
               src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=2000"
@@ -47,7 +47,7 @@ const HeroSection = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 md:h-20 md:w-20 bg-accent rounded-full flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform bg-(--primary-color)">
+              <div className="w-16 h-16 md:h-20 md:w-20 bg-(--primary-color) rounded-full flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform bg-(--primary-color)">
                 <Play fill="black" size={28} className="ml-1" />
               </div>
             </div>
