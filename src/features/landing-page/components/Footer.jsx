@@ -14,7 +14,6 @@ const navLinks = [
 const otherPages = [
   { label: "Privacy Policy", to: "/privacy" },
   { label: "Terms & Conditions", to: "/terms" },
-  { label: "Refund Policy", to: "/refund" },
 ];
 
 const socialLinks = [
