@@ -1,11 +1,10 @@
 import { Menu, X } from "lucide-react";
 import React, { useState } from "react";
-import { Link as ScrollLink } from "react-scroll";
 import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
+import { scroller } from "react-scroll"; // ← import scroller
 
 const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -19,19 +18,24 @@ const Nav = () => {
     "Team",
   ];
 
-  const handleNavigation = (section) => {
-    // If already on homepage → scroll normally
-    if (location.pathname === "/") {
-      const element = document.getElementById(section);
+  const scrollToSection = (section) => {
+    scroller.scrollTo(section, {
+      smooth: true,
+      duration: 500,
+      offset: -70, // adjust based on your navbar height
+    });
+  };
 
-      if (element) {
-        element.scrollIntoView({
-          behavior: "smooth",
-        });
-      }
+  const handleNavigation = (section) => {
+    if (location.pathname === "/") {
+      // Already on home → scroll directly
+      scrollToSection(section);
     } else {
-      // If on another page → go home with hash
-      navigate(`/#${section}`);
+      // On another page → navigate home first, then scroll
+      navigate("/");
+      setTimeout(() => {
+        scrollToSection(section);
+      }, 100); // wait for home page to mount
     }
 
     setIsMenuOpen(false);
@@ -58,7 +62,6 @@ const Nav = () => {
                 className="text-black cursor-pointer hover:text-black transition font-['Inter'] duration-200 relative group"
               >
                 {link}
-
                 <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[--primary-color] transition-all duration-300 group-hover:w-full"></span>
               </button>
             </li>
@@ -88,7 +91,6 @@ const Nav = () => {
                 className="text-lg text-black hover:text-black transition relative group"
               >
                 {link}
-
                 <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-[#b8ff03] transition-all duration-300 group-hover:w-full"></span>
               </button>
             </li>

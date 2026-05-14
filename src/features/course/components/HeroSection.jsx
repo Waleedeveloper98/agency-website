@@ -30,10 +30,10 @@ const HeroSection = () => {
 
         <AnimatedSection delay={0.2}>
           <h1 className="secondary-font text-4xl md:text-[3.9rem] text-shadow-lg text-shadow-black/10 md:w-[80%] md:mx-auto font-bold tracking-tighter mb-8 md:mb-3">
-            Learn Generative Ai in{" "}
+            Learn Generative AI in{" "}
             <span className="text-(--primary-color)">30 Days</span>
             <br />
-            Get Paid By Brands
+            Get Paid By <span className="italic-font italic font-light">Brands</span>
           </h1>
         </AnimatedSection>
         {/* Hero Visual Mockup (Simulated) */}

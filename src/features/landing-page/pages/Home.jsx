@@ -133,7 +133,7 @@ const Home = () => {
             <h1 className="text-5xl font-medium sm:text-5xl md:text-6xl lg:text-8xl font-bold pointer-events-none text-shadow-black/10 text-shadow-lg md:leading-20">
               Build
             </h1>
-            <h1 className="secondary-font font-extralight text-4xl md:text-6xl lg:text-[4.8rem] itallic-font italic">
+            <h1 className="secondary-font font-extralight text-4xl md:text-6xl lg:text-[4.8rem] italic-font italic">
               Audience
             </h1>
           </div>
