@@ -22,6 +22,36 @@ const ResultsSection = () => {
       text: "The Urdu AI voiceover module is a game changer for the local market. My conversion rates on Meta ads jumped by 40%.",
       rating: 5,
     },
+    {
+      name: "Hassan Mehmood",
+      role: "Shopify Store Owner",
+      text: "I created my first AI product commercial in Week 2 and instantly used it in my TikTok ads. Sales literally doubled.",
+      rating: 5,
+    },
+    {
+      name: "Areeba Noor",
+      role: "Content Creator",
+      text: "Before this bootcamp I had no idea how AI tools worked. Now brands are paying me to create UGC style AI campaigns.",
+      rating: 5,
+    },
+    {
+      name: "Usman Tariq",
+      role: "Freelancer",
+      text: "The client acquisition strategies alone were worth the price. I landed 2 international clients using the exact outreach method taught.",
+      rating: 5,
+    },
+    {
+      name: "Maham Javed",
+      role: "Social Media Manager",
+      text: "This course feels 2 years ahead of the Pakistani market. The cinematic AI ad workflow completely changed my content quality.",
+      rating: 5,
+    },
+    {
+      name: "Bilal Aslam",
+      role: "Video Editor",
+      text: "I was struggling to find high-income skills. After learning AI ad creation, I now offer premium ad packages to ecommerce brands.",
+      rating: 5,
+    },
   ];
 
   return (
@@ -29,9 +59,9 @@ const ResultsSection = () => {
       <div className="max-w-7xl mx-auto">
         <AnimatedSection className="text-center mb-20">
           <h2 className="text-4xl md:text-7xl font-bold mb-6">
-            Real Proof. <br /> <ColorHeading text={"Real Results."}/>
+            Real Proof. <br /> <ColorHeading text={"Real Results."} />
           </h2>
-          <p className="text-xl text-(--secondary-color) font-medium">
+          <p className="text-sm md:text-xl text-(--secondary-color) font-medium">
             Join 500+ professionals who have already UPGRADED.
           </p>
         </AnimatedSection>
@@ -41,10 +71,13 @@ const ResultsSection = () => {
             <AnimatedSection
               key={i}
               delay={i * 0.1}
-              className="bg-gray-50 p-10 rounded-xl cursor-pointer border border-gray-100 flex flex-col justify-between group hover:bg-black transition-all duration-500"
+              className="bg-gray-50 p-6 rounded-xl cursor-pointer border border-gray-100 flex flex-col justify-between group hover:bg-black transition-all duration-500"
             >
               <div className="cursor-pointer">
-                <Quote className="text-(--primary-color) mb-8 opacity-20" size={48} />
+                <Quote
+                  className="text-(--primary-color) mb-8 opacity-20"
+                  size={32}
+                />
                 <div className="flex gap-1 mb-6">
                   {[...Array(review.rating)].map((_, i) => (
                     <Star
@@ -55,7 +88,7 @@ const ResultsSection = () => {
                     />
                   ))}
                 </div>
-                <p className="text-2xl font-bold leading-tight mb-10 group-hover:text-white transition-colors">
+                <p className="text-base font-light leading-tight mb-10 group-hover:text-white transition-colors">
                   "{review.text}"
                 </p>
               </div>
@@ -63,10 +96,10 @@ const ResultsSection = () => {
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 bg-gray-200 rounded-full bg-gradient-to-br from-(--primary-color) to-black" />
                 <div>
-                  <h5 className="font-black group-hover:text-white transition-colors">
+                  <h5 className="font-bold group-hover:text-white transition-colors">
                     {review.name}
                   </h5>
-                  <p className="text-sm text-gray-500 font-medium uppercase tracking-widest">
+                  <p className="text-xs text-gray-500 font-medium uppercase tracking-widest">
                     {review.role}
                   </p>
                 </div>
