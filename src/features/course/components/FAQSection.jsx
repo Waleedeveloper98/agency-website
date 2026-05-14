@@ -35,7 +35,7 @@ const FAQSection = () => {
       <div className="max-w-4xl mx-auto">
         <AnimatedSection className="text-center mb-20">
           <h2 className="text-4xl md:text-7xl font-bold mb-4">
-            Common <ColorHeading text={"Questions"}/>
+            Common <br /> <ColorHeading text={"Questions"}/>
           </h2>
           <p className="text-xl text-gray-500 font-medium">
             Everything you need to know before joining.

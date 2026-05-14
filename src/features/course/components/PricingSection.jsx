@@ -1,3 +1,4 @@
+import { Link } from "react-scroll";
 import AnimatedSection from "./AnimatedSection";
 import ColorHeading from "./ColorHeading";
 import CountdownTimer from "./CountdownTimer";
@@ -88,9 +89,10 @@ const PricingSection = () => {
                   </div>
                 </div>
 
-                <a
-                  href="https://wa.me/your_number_here"
-                  target="_blank"
+                <Link
+                  to="bankDetails"
+                  smooth={true}
+                  duration={500}
                   className="w-full block text-center bg-black text-white text-xl sm:text-2xl font-bold py-4 rounded-xl hover:bg-(--primary-color) hover:text-black transition-all duration-300 mb-6 shadow-2xl group"
                 >
                   Reserve My Seat
@@ -98,7 +100,7 @@ const PricingSection = () => {
                     size={28}
                     className="inline ml-4 group-hover:translate-x-2 transition-transform"
                   />
-                </a>
+                </Link>
                 <div className="flex items-center justify-center gap-2 text-gray-400 font-bold text-sm">
                   <ShieldCheck size={18} />
                   Secure Enrollment via WhatsApp

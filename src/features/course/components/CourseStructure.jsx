@@ -51,7 +51,7 @@ const CourseStructure = () => {
       <div className="max-w-5xl mx-auto">
         <AnimatedSection className="text-center mb-16">
           <h2 className="text-4xl md:text-7xl font-bold mb-4">
-            Interactive <ColorHeading text="Curriculum" />
+            Interactive <br /> <ColorHeading text="Curriculum" />
           </h2>
           <p className="text-xl text-(--secondary-color) font-medium">
             12 Live Classes. 4 Capstone Projects. Lifetime Support.

@@ -60,7 +60,7 @@ const PaymentDetails = () => {
   ];
 
   return (
-    <section className="py-24 px-6 bg-[#050505] text-white overflow-hidden relative">
+    <section id="bankDetails" className="py-24 px-6 bg-[#050505] text-white overflow-hidden relative">
       {/* Background Decorative Blobs */}
       <div className="absolute top-0 left-1/4 w-[40%] h-[40%] bg-(--primary-color)/5 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[30%] h-[30%] bg-(--primary-color)/10 rounded-full blur-[100px] pointer-events-none" />

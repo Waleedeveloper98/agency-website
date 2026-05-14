@@ -36,7 +36,7 @@ const OpportunitySection = () => {
         <div className="text-center mb-20">
           <AnimatedSection>
             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-[0.9] mb-6">
-              Modern Income <ColorHeading text={"Opportunities"}/>
+              Modern Income <br /> <ColorHeading text={"Opportunities"}/>
             </h2>
             <p className="text-xl text-(--secondary-color) font-medium max-w-2xl mx-auto">
               Brands are desperate for high-quality content. Here's what you can
