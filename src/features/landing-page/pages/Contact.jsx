@@ -1,26 +1,31 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const Contact = () => {
+  const formRef = useRef();
   const [formData, setFormData] = useState({
-    fullName: "",
+    name: "",
     phone: "",
     email: "",
     message: "",
   });
 
   const [errors, setErrors] = useState({});
+  const [status, setStatus] = useState("idle");
 
   const validate = (data) => {
     const newErrors = {};
 
-    // Full Name
-    if (!data.fullName.trim()) {
-      newErrors.fullName = "Full name is required.";
-    } else if (data.fullName.trim().length < 2) {
-      newErrors.fullName = "Name must be at least 2 characters.";
+    if (!data.name.trim()) {
+      newErrors.name = "Name is required.";
+    } else if (data.name.trim().length < 2) {
+      newErrors.name = "Name must be at least 2 characters.";
     }
 
-    // Phone — must be numeric, allow +, spaces, dashes, parens
     const phoneRegex = /^\+?[\d\s\-().]{7,15}$/;
     if (!data.phone.trim()) {
       newErrors.phone = "Phone number is required.";
@@ -28,7 +33,6 @@ const Contact = () => {
       newErrors.phone = "Enter a valid phone number (digits only).";
     }
 
-    // Email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!data.email.trim()) {
       newErrors.email = "Email address is required.";
@@ -36,7 +40,6 @@ const Contact = () => {
       newErrors.email = "Enter a valid email address.";
     }
 
-    // Message
     if (!data.message.trim()) {
       newErrors.message = "Message is required.";
     } else if (data.message.trim().length < 10) {
@@ -48,10 +51,7 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setFormData((prev) => ({ ...prev, [name]: value }));
-
-    // Clear the error for this field as soon as user starts correcting it
     if (errors[name]) {
       setErrors((prev) => ({ ...prev, [name]: "" }));
     }
@@ -61,24 +61,33 @@ const Contact = () => {
     e.preventDefault();
 
     const validationErrors = validate(formData);
-
     if (Object.keys(validationErrors).length > 0) {
       setErrors(validationErrors);
       return;
     }
 
-    // All good — clear errors and proceed
     setErrors({});
-    alert("Message sent! We'll be in touch soon.");
+    setStatus("sending");
+
+    // ✅ EmailJS
+    emailjs
+      .sendForm(SERVICE_ID, TEMPLATE_ID, formRef.current, PUBLIC_KEY)
+      .then(() => {
+        setStatus("success");
+        // Form clear 
+        setFormData({ name: "", phone: "", email: "", message: "" });
+      })
+      .catch((err) => {
+        console.error("EmailJS Error:", err);
+        setStatus("error");
+      });
   };
 
-  // Reusable error message component
   const ErrorMsg = ({ field }) =>
     errors[field] ? (
       <p className="mt-1.5 text-xs text-red-500 font-medium">{errors[field]}</p>
     ) : null;
 
-  // Dynamic input class — red border on error
   const inputClass = (field) =>
     `w-full rounded-lg border bg-white px-4 py-3 text-sm outline-none transition-all duration-200 placeholder:text-gray-400 focus:ring-4 ${
       errors[field]
@@ -87,7 +96,7 @@ const Contact = () => {
     }`;
 
   return (
-    <section id="contact" className="w-full secondary-font bg-white px-4 py-20 overflow-hidden">
+     <section id="contact" className="w-full secondary-font bg-white px-4 py-20 overflow-hidden">
       <div className="max-w-[1280px] mx-auto">
         {/* Badge */}
         <div className="flex justify-center mb-6">
@@ -95,26 +104,43 @@ const Contact = () => {
             Contact us
           </span>
         </div>
-
+ 
         {/* Heading */}
         <h2 className="primary-font text-center font-medium text-black leading-tight text-[clamp(2rem,8.5vw,4.8rem)] mb-4">
           Let's Talk About
           <br />
           Your Next Video.
         </h2>
-
+ 
         {/* Sub text */}
         <p className="sf text-center text-gray-500 text-[clamp(0.9rem,1.2vw,1.05rem)] leading-7 max-w-[450px] mx-auto mb-10">
           Reach out to Zainx Media and let's figure out exactly what your
           channel needs no pressure, just a real conversation about your content
           goals.
         </p>
-
+ 
         {/* Main Card */}
         <div className="flex flex-col lg:flex-row overflow-hidden rounded-md border border-gray-200 bg-gray-50 shadow-[0_12px_48px_rgba(0,0,0,0.07)]">
           {/* Form Side */}
           <div className="flex-1 p-6 sm:p-8 md:p-10 lg:p-12">
-            <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
+ 
+            {/* ✅ SUCCESS MESSAGE */}
+            {status === "success" && (
+              <div className="mb-6 rounded-lg bg-green-50 border border-green-200 px-5 py-4 text-sm text-green-700 font-medium">
+                ✅ We will get back to you soon!
+              </div>
+            )}
+ 
+            {/* ❌ ERROR MESSAGE */}
+            {status === "error" && (
+              <div className="mb-6 rounded-lg bg-red-50 border border-red-200 px-5 py-4 text-sm text-red-600 font-medium">
+                ❌ Something went wrong. Please try again later.
+              </div>
+            )}
+ 
+            {/* ✅ ref={formRef}*/}
+            <form ref={formRef} onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
+ 
               {/* Name + Phone */}
               <div className="flex flex-col sm:flex-row gap-4">
                 {/* Full Name */}
@@ -124,16 +150,16 @@ const Contact = () => {
                   </label>
                   <input
                     id="fullName"
-                    name="fullName"
+                    name="name"            
                     type="text"
                     placeholder="Jane Smith"
-                    value={formData.fullName}
+                    value={formData.name}
                     onChange={handleChange}
                     className={inputClass("fullName")}
                   />
                   <ErrorMsg field="fullName" />
                 </div>
-
+ 
                 {/* Phone */}
                 <div className="flex-1">
                   <label htmlFor="phone" className="sf block text-sm font-semibold text-gray-700 mb-2">
@@ -141,7 +167,7 @@ const Contact = () => {
                   </label>
                   <input
                     id="phone"
-                    name="phone"
+                    name="phone"       
                     type="tel"
                     placeholder="+001 234 567 890"
                     value={formData.phone}
@@ -151,7 +177,7 @@ const Contact = () => {
                   <ErrorMsg field="phone" />
                 </div>
               </div>
-
+ 
               {/* Email */}
               <div>
                 <label htmlFor="email" className="sf block text-sm font-semibold text-gray-700 mb-2">
@@ -159,7 +185,7 @@ const Contact = () => {
                 </label>
                 <input
                   id="email"
-                  name="email"
+                  name="email"           
                   type="email"
                   placeholder="jane@framer.com"
                   value={formData.email}
@@ -168,15 +194,14 @@ const Contact = () => {
                 />
                 <ErrorMsg field="email" />
               </div>
-
-              {/* Message */}
+ 
               <div>
                 <label htmlFor="message" className="sf block text-sm font-semibold text-gray-700 mb-2">
                   Message
                 </label>
                 <textarea
                   id="message"
-                  name="message"
+                  name="message"           
                   rows={5}
                   placeholder="Tell us about your business..."
                   value={formData.message}
@@ -185,17 +210,19 @@ const Contact = () => {
                 />
                 <ErrorMsg field="message" />
               </div>
-
-              {/* Submit */}
+ 
+              {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full rounded-md py-3 font-bold text-sm text-white uppercase bg-gradient-to-br from-[#a6e800] to-[var(--primary-color)] transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_22px_rgba(166,232,0,0.35)] active:scale-[0.98] cursor-pointer"
+                disabled={status === "sending"}
+                className="w-full rounded-md py-3 font-bold text-sm text-white uppercase bg-gradient-to-br from-[#a6e800] to-[var(--primary-color)] transition-all duration-300 hover:scale-[1.01] hover:shadow-[0_0_22px_rgba(166,232,0,0.35)] active:scale-[0.98] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed disabled:scale-100"
               >
-                Submit
+                {status === "sending" ? "⏳ Sending..." : "Submit"}
               </button>
+ 
             </form>
           </div>
-
+ 
           {/* Image Side */}
           <div className="hidden lg:flex lg:w-[43%] aspect-square">
             <img

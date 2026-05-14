@@ -14,7 +14,7 @@ import Nav from "../components/Nav";
 const LandingPage = () => {
   return (
     <>
-    <Nav />
+      <Nav />
       <Home />
       <ReelsMarqueContainer />
       <About />
