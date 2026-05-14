@@ -29,7 +29,7 @@ const HeroSection = () => {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <h1 className="primary-font text-4xl md:text-[4.2rem] md:w-[60%] md:mx-auto font-black mb-8 md:mb-0">
+          <h1 className="secondary-font text-4xl md:text-[3.9rem] text-shadow-lg text-shadow-black/10 md:w-[80%] md:mx-auto font-bold tracking-tighter mb-8 md:mb-3">
             Learn Generative Ai in{" "}
             <span className="text-(--primary-color)">30 Days</span>
             <br />
@@ -40,7 +40,7 @@ const HeroSection = () => {
         <AnimatedSection delay={0.6} className=" max-w-[44rem] mx-auto px-4">
           <div className="relative aspect-video bg-gray-100 rounded-2xl overflow-hidden border-4 md:border-8 border-white shadow-2xl mb-10">
             <img
-              src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&q=80&w=2000"
+              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
               alt="AI Ads Visualization"
               className="w-full h-full object-cover opacity-80"
               referrerPolicy="no-referrer"
@@ -78,12 +78,12 @@ const HeroSection = () => {
           </Link>
         </AnimatedSection>
 
-        <AnimatedSection delay={0.3}>
+        {/* <AnimatedSection delay={0.3}>
           <p className="text-lg md:text-2xl text-gray-500 max-w-3xl mx-auto mb-12 font-medium leading-relaxed text-balance px-4">
             Create AI product ads, UGC videos, AI commercials and Urdu
             voiceovers even if you’re starting from zero.
           </p>
-        </AnimatedSection>
+        </AnimatedSection> */}
 
         <AnimatedSection delay={0.5}>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
