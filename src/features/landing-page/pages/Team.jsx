@@ -10,7 +10,7 @@ const teamMembers = [
     name: "Ethan Parker",
     role: "Creative Director",
     image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80",
+      "/images/editor1.webp",
     instagramUrl: "https://instagram.com",
   },
   {
@@ -18,7 +18,7 @@ const teamMembers = [
     name: "Sophia Bennett",
     role: "Marketing Strategist",
     image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=400&q=80",
+      "/images/editor2.webp",
     instagramUrl: "https://instagram.com",
   },
   {
@@ -26,7 +26,7 @@ const teamMembers = [
     name: "Liam Harrison",
     role: "Social Manager",
     image:
-      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80",
+      "/images/editor3.webp",
     instagramUrl: "https://instagram.com",
   },
   {
@@ -34,7 +34,7 @@ const teamMembers = [
     name: "James Carter",
     role: "Content Lead",
     image:
-      "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?w=400&q=80",
+      "/images/editor4.webp",
     instagramUrl: "https://instagram.com",
   },
 ];

@@ -39,6 +39,7 @@ const GrowWithUs = () => {
             src="./images/grow2.webp"
             alt="Campaign visual 1"
             className="w-full h-full object-cover object-center"
+            loading="lazy"
           />
         </div>
       </div>
@@ -61,6 +62,7 @@ const GrowWithUs = () => {
             src="./images/grow1.webp"
             alt="Campaign visual 2"
             className="w-full h-full object-cover object-center"
+            loading="lazy"
           />
         </div>
       </div>

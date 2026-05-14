@@ -1,9 +1,9 @@
 import React from "react";
 
 const images = [
-  "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&auto=format&fit=crop&q=60",
-  "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&auto=format&fit=crop&q=60",
-  "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&auto=format&fit=crop&q=60",
+  "/images/reel1.webp",
+  "/images/reel2.webp",
+  "/images/reel3.webp",
 ];
 
 const tiled = [...images, ...images, ...images, ...images];
@@ -38,7 +38,8 @@ const Column = ({ reverse = false, offset = "" }) => {
             <img
               className="w-full h-full object-cover block"
               src={img}
-              alt=""
+              alt={img + i}
+              loading="lazy"
             />
           </div>
         ))}

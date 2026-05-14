@@ -8,7 +8,7 @@ const reviews = [
     review:
       "As a lazy entrepreneur who got out of bed at 11, I managed to build my SaaS MVP with slothUI in 3 days. Never looked back since then.",
     image:
-      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop",
+      "/images/editor1.webp",
   },
   {
     id: 2,
@@ -17,7 +17,7 @@ const reviews = [
     review:
       "SlothUI completely transformed our workflow. We launched our first product in less than a week.",
     image:
-      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=200&auto=format&fit=crop",
+      "/images/editor2.webp",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const reviews = [
     review:
       "The clean components and smooth developer experience made building enjoyable again.",
     image:
-      "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop",
+      "/images/editor3.webp",
   },
   {
     id: 4,
@@ -35,7 +35,7 @@ const reviews = [
     review:
       "We saved countless hours using SlothUI. The interface and design system are simply perfect.",
     image:
-      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop",
+      "/images/editor4.webp",
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const reviews = [
     review:
       "Fast, elegant, and production-ready. SlothUI helped us move from idea to launch effortlessly.",
     image:
-      "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=200&auto=format&fit=crop",
+      "/images/editor2.webp",
   },
 ];
 
@@ -91,6 +91,7 @@ export default function CustomerReviews() {
                   <img
                     src={user.image}
                     alt={user.name}
+                    loading="lazy"
                     className={`rounded-full object-cover border-[3px] border-white shadow-md transition-all duration-500
                     ${
                       isActive

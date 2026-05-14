@@ -147,13 +147,17 @@ const Home = () => {
         </div>
         <div className="flex flex-col gap-8 md:flex-row">
           <SpecialButton />
-          <button className="bg-neutral-50/50 text-black px-6 py-3 hover:scale-105 transition-all duration-300 rounded-md shadow shadow-black/10">
-            <Link to="contact" smooth={true} duration={900} offset={200}>
-              <p className="text-sm md:text-base lg:text-lg cursor-pointer secondary-font font-semibold">
-                Get Free Consultation
-              </p>
-            </Link>
-          </button>
+          <Link
+            to="contact"
+            smooth={true}
+            duration={900}
+            offset={200}
+            className="bg-neutral-50/50 text-black px-6 py-3 hover:scale-105 transition-all duration-300 rounded-md shadow shadow-black/10 cursor-pointer inline-block"
+          >
+            <p className="text-sm md:text-base lg:text-lg secondary-font font-semibold">
+              Get Free Consultation
+            </p>
+          </Link>
         </div>
 
         {/* arrows icons */}
@@ -161,6 +165,7 @@ const Home = () => {
           className="absolute right-14 size-13 bottom-5 md:size-20 md:-bottom-28 md:left-18 rotate-90 md:rotate-180 lg:-left-5 lg:bottom-12 lg:-rotate-85"
           src="./icons/arrow.svg"
           alt="arrow"
+          loading="lazy"
         />
       </div>
     </section>

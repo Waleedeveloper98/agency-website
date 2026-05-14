@@ -32,6 +32,7 @@ const TeamUserCard = ({ name, role, image, instagramUrl = "#" }) => {
           transition-transform duration-500 ease-out
           group-hover:scale-110
         "
+        loading="lazy"
       />
 
       {/* ── Gradient scrim — only darkens bottom third, top stays clear ── */}
