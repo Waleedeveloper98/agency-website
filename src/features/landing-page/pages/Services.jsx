@@ -42,7 +42,7 @@ const Services = () => {
           </h6>
         </div>
         <div>
-          <h2 className="primary-font font-medium text-2xl md:text-4xl lg:text-5xl">
+          <h2 className="primary-font font-medium text-2xl md:text-4xl lg:text-6xl lg:max-w-4/5 lg:mx-auto">
             Services That Speak for Themselves
           </h2>
         </div>

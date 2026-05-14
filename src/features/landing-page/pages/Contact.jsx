@@ -106,7 +106,7 @@ const Contact = () => {
         </div>
  
         {/* Heading */}
-        <h2 className="primary-font text-center font-medium text-black leading-tight text-[clamp(2rem,8.5vw,4.8rem)] mb-4">
+        <h2 className="primary-font text-center md:leading-none font-medium text-black leading-tight text-[clamp(2rem,8.5vw,4.8rem)] mb-4">
           Let's Talk About
           <br />
           Your Next Video.

@@ -58,7 +58,7 @@ export default function CustomerReviews() {
         <div className="absolute bottom-[-80px] left-1/2 -translate-x-1/2 w-[90%] h-[180px] bg-(--primary-color) blur-[90px] opacity-70 rounded-full"></div>
 
         {/* Main Card */}
-        <div className="relative bg-[#f8f8f8]/95 backdrop-blur-xl border border-white/40 rounded-[28px] sm:rounded-[34px] shadow-[0_10px_40px_rgba(0,0,0,0.08)] px-5 sm:px-8 md:px-10 py-10 sm:py-14 text-center min-h-88 max-h-96 md:max-h-104">
+        <div className="relative bg-[#f8f8f8]/95 backdrop-blur-xl border border-white/40 rounded-lg sm:rounded-xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] px-5 sm:px-8 md:px-10 py-10 sm:py-14 text-center min-h-88 max-h-96 md:max-h-104">
           {/* Review */}
           <p className="text-[#2d3748] text-lg  md:text-2xl leading-[1.45] font-medium tracking-[-0.03em]">
             {activeReview.review}

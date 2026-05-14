@@ -125,12 +125,12 @@ const Home = () => {
         {/* heading */}
         <div className="flex flex-col md:gap-4 select-none secondary-font tracking-[-0.1rem]">
           <div className="max-w-5/5 mx-auto">
-            <h1 className="text-5xl font-medium sm:text-5xl md:text-6xl lg:text-8xl  font-bold pointer-events-none text-shadow-black/10 text-shadow-lg md:leading-20">
+            <h1 className="text-5xl font-medium sm:text-5xl md:text-6xl lg:text-8xl  font-bold pointer-events-none text-shadow-black/10 text-shadow-lg md:leading-20 md:tracking-tighter">
               We Edit Videos
             </h1>
           </div>
           <div className="max-w-5/5 mx-auto flex  items-center justify-end gap-3 sm:gap-8">
-            <h1 className="text-5xl font-medium sm:text-5xl md:text-6xl lg:text-8xl font-bold pointer-events-none text-shadow-black/10 text-shadow-lg md:leading-20">
+            <h1 className="text-5xl font-medium sm:text-5xl md:text-6xl lg:text-8xl font-bold pointer-events-none text-shadow-black/10 text-shadow-lg md:leading-20 md:tracking-tighter">
               Build
             </h1>
             <h1 className="secondary-font font-extralight text-4xl md:text-6xl lg:text-[4.8rem] italic-font italic">

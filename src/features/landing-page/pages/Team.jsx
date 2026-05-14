@@ -76,7 +76,7 @@ const Team = () => {
               primary-font text-black font-medium
               text-5xl px-4 sm:px-0 sm:text-5xl lg:text-7xl
               leading-tight text-center
-              max-w-3xl mx-auto mb-5
+              max-w-3xl mx-auto mb-5 md:leading-none
             "
           >
             The Editors Behind <br className="hidden sm:block" /> Every Viral
