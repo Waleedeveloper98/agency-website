@@ -59,7 +59,6 @@ const FeatureTiltCard = ({ icon: Icon, label, sub, className = "" }) => {
           rounded-2xl
           border
           border-black/5
-          bg-white/70
           p-6
           transition-all
           duration-500
@@ -125,7 +124,7 @@ const FeatureTiltCard = ({ icon: Icon, label, sub, className = "" }) => {
           </motion.div>
 
           {/* Title */}
-          <h3 className="text-xl font-bold tracking-tight text-black select-none">
+          <h3 className="text-xl font-bold tracking-tight select-none">
             {label}
           </h3>
 

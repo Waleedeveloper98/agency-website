@@ -2,6 +2,7 @@ import AnimatedSection from "./AnimatedSection";
 import { AlertCircle, Clock3, TrendingDown, DollarSign } from "lucide-react";
 import ColorHeading from "./ColorHeading";
 import { motion } from "framer-motion";
+import FeatureTiltCard from "./FeatureTiltCard";
 
 const HardTruthSection = () => {
   const truths = [
@@ -112,82 +113,12 @@ const HardTruthSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6">
           {truths.map((truth, i) => (
             <AnimatedSection key={i} delay={0.1 * i}>
-              <motion.div
-                whileHover={{
-                  y: -8,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 200,
-                  damping: 20,
-                }}
-                className="
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-3xl
-                  border
-                  border-white/10
-                  bg-gradient-to-b
-                  from-white/[0.05]
-                  to-white/[0.02]
-                  backdrop-blur-xl
-                  p-7
-                  md:p-8
-                  h-full
-                  min-h-[320px]
-                  transition-all
-                  duration-500
-                  hover:border-(--primary-color)/40
-                  hover:shadow-[0_0_60px_rgba(184,255,3,0.12)]
-                "
-              >
-                {/* Glow */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_top,rgba(184,255,3,0.14),transparent_70%)]" />
-
-                {/* Icon */}
-                <div
-                  className="
-                    relative
-                    z-10
-                    w-16
-                    h-16
-                    md:h-12
-                    md:w-12
-                    rounded-xl
-                    border
-                    border-white/10
-                    bg-white/[0.04]
-                    flex
-                    items-center
-                    justify-center
-                    mb-8
-                    group-hover:bg-(--primary-color)
-                    group-hover:scale-110
-                    transition-all
-                    duration-500
-                  "
-                >
-                  <truth.icon
-                    size={24}
-                    className="text-white group-hover:text-black transition-colors duration-500"
-                  />
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10">
-                  <h3 className="text-2xl md:text-[1.9rem] lg:text-xl font-bold leading-tight tracking-tight mb-5 select-none">
-                    {truth.title}
-                  </h3>
-
-                  <p className="text-gray-400 text-base lg:text-xs leading-relaxed font-medium select-none">
-                    {truth.description}
-                  </p>
-                </div>
-
-                {/* Bottom Line */}
-                <div className="absolute bottom-0 left-0 h-[3px] w-0 bg-(--primary-color) group-hover:w-full transition-all duration-700" />
-              </motion.div>
+              <FeatureTiltCard 
+                icon={truth.icon}
+                label={truth.title}
+                sub={truth.description}
+                bgClass=""
+              />
             </AnimatedSection>
           ))}
         </div>

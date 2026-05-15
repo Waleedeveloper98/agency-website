@@ -1,5 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import { motion } from "framer-motion";
+import Tilt from "react-parallax-tilt";
 import ColorHeading from "./ColorHeading";
 
 const TransformationSection = () => {
@@ -90,135 +91,150 @@ const TransformationSection = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:grid-cols-4 md:gap-6 relative">
             {steps.map((step, i) => (
               <AnimatedSection key={i} delay={i * 0.1}>
-                <motion.div
-                  whileHover={{
-                    y: -6,
-                  }}
-                  transition={{
-                    type: "spring",
-                    stiffness: 220,
-                    damping: 18,
-                  }}
-                  className={`
-                    group
-                    relative
-                    pl-12
-                    md:pl-0
-                    md:pt-14
-
-                  ${step.featured ? "md:-translate-y-3" : ""}
-                  `}
+                <Tilt
+                  tiltMaxAngleX={10}
+                  tiltMaxAngleY={10}
+                  perspective={1400}
+                  scale={1.02}
+                  transitionSpeed={1200}
+                  gyroscope={true}
+                  className="h-full"
                 >
-                  {/* Timeline Anchor */}
-                  <div
-                    className="
-                      absolute
-                      left-0
-                      top-1
-                      md:left-1/2
-                      md:-translate-x-1/2
-                      md:top-0
-                      z-20
-                    "
+                  <motion.div
+                    whileHover={{
+                      y: -6,
+                    }}
+                    transition={{
+                      type: "spring",
+                      stiffness: 220,
+                      damping: 18,
+                    }}
+                    className={`
+                      group
+                      relative
+                      pl-12
+                      md:pl-0
+                      md:pt-14
+
+                      ${step.featured ? "md:-translate-y-3" : ""}
+                    `}
                   >
+                    {/* Timeline Anchor */}
                     <div
-                      className={`
-                        relative
-                        h-5
-                        w-5
-                        rounded-full
-                        border
-                        transition-all
-                        duration-500
-
-                        ${
-                          step.featured
-                            ? "border-(--primary-color) bg-(--primary-color)"
-                            : "border-white/20 bg-black"
-                        }
-
-                        group-hover:border-(--primary-color)
-                        group-hover:bg-(--primary-color)
-                      `}
+                      className="
+                        absolute
+                        left-0
+                        top-1
+                        md:left-1/2
+                        md:-translate-x-1/2
+                        md:top-0
+                        z-20
+                      "
                     >
                       <div
                         className={`
-                          absolute
-                          inset-1
+                          relative
+                          h-5
+                          w-5
                           rounded-full
-                          transition-colors
+                          border
+                          transition-all
                           duration-500
 
-                          ${step.featured ? "bg-black" : "bg-white/20"}
+                          ${
+                            step.featured
+                              ? "border-(--primary-color) bg-(--primary-color)"
+                              : "border-white/20 bg-black"
+                          }
 
-                          group-hover:bg-black
+                          group-hover:border-(--primary-color)
+                          group-hover:bg-(--primary-color)
                         `}
-                      />
-                    </div>
-                  </div>
+                      >
+                        <div
+                          className={`
+                            absolute
+                            inset-1
+                            rounded-full
+                            transition-colors
+                            duration-500
 
-                  {/* Card */}
-                  <div
-                    className={`
-                      relative
-                      overflow-hidden
-                      rounded-3xl
-                      border
-                      p-6
-                      md:p-7
-                      transition-all
-                      duration-500
-                      hover:-translate-y-1
-                      group-hover:border-(--primary-color)/30
+                            ${step.featured ? "bg-black" : "bg-white/20"}
 
-                      ${
-                        step.featured
-                          ? "border-(--primary-color)/20 bg-white/[0.06] shadow-[0_0_40px_rgba(184,255,3,0.08)]"
-                          : "border-white/10 bg-white/[0.03]"
-                      }
-                    `}
-                  >
-                    {/* Hover Glow */}
-                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_top,rgba(184,255,3,0.10),transparent_70%)]" />
-
-                    {/* Phase */}
-                    <div className="relative z-10 mb-4">
-                      <div className="inline-flex items-center rounded-full bg-(--primary-color)/10 px-4 py-2 border border-(--primary-color)/20">
-                        <span className="text-xs font-black uppercase tracking-[0.2em] text-(--primary-color)">
-                          {step.phase}
-                        </span>
+                            group-hover:bg-black
+                          `}
+                        />
                       </div>
                     </div>
 
-                    {/* Title */}
-                    <h3
-                      className="relative z-10
-          text-2xl
-          md:text-[2rem]
-          lg:text-2xl
-          font-bold
-          tracking-tight
-          leading-tight
-          mb-4"
-                    >
-                      {step.title}
-                    </h3>
+                    {/* Card */}
+                    <div
+                      className={`
+                        relative
+                        overflow-hidden
+                        rounded-3xl
+                        border
+                        p-6
+                        md:p-7
+                        transition-all
+                        duration-500
+                        hover:-translate-y-1
+                        group-hover:border-(--primary-color)/30
 
-                    {/* Description */}
-                    <p
-                      className="relative z-10
-          text-base
-          md:text-lg
-          lg:text-sm
-          leading-relaxed text-zinc-300"
+                        ${
+                          step.featured
+                            ? "border-(--primary-color)/20 bg-white/[0.06] shadow-[0_0_40px_rgba(184,255,3,0.08)]"
+                            : "border-white/10 bg-white/[0.03]"
+                        }
+                      `}
                     >
-                      {step.desc}
-                    </p>
+                      {/* Hover Glow */}
+                      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_top,rgba(184,255,3,0.10),transparent_70%)]" />
 
-                    {/* Bottom Hover Line */}
-                    <div className="absolute bottom-0 left-0 h-1 w-0 bg-(--primary-color) group-hover:w-full transition-all duration-700" />
-                  </div>
-                </motion.div>
+                      {/* Phase */}
+                      <div className="relative z-10 mb-4">
+                        <div className="inline-flex items-center rounded-full bg-(--primary-color)/10 px-4 py-2 border border-(--primary-color)/20">
+                          <span className="text-xs font-black uppercase tracking-[0.2em] text-(--primary-color)">
+                            {step.phase}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Title */}
+                      <h3
+                        className="
+                          relative z-10
+                          text-2xl
+                          md:text-[2rem]
+                          lg:text-2xl
+                          font-bold
+                          tracking-tight
+                          leading-tight
+                          mb-4
+                        "
+                      >
+                        {step.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p
+                        className="
+                          relative z-10
+                          text-base
+                          md:text-lg
+                          lg:text-sm
+                          leading-relaxed
+                          text-zinc-300
+                        "
+                      >
+                        {step.desc}
+                      </p>
+
+                      {/* Bottom Hover Line */}
+                      <div className="absolute bottom-0 left-0 h-1 w-0 bg-(--primary-color) group-hover:w-full transition-all duration-700" />
+                    </div>
+                  </motion.div>
+                </Tilt>
               </AnimatedSection>
             ))}
           </div>

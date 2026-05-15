@@ -3,6 +3,7 @@ import { Camera, Video, UserCheck, Mic, ArrowRight } from "lucide-react";
 import ColorHeading from "./ColorHeading";
 import { motion } from "framer-motion";
 import FeatureCard from "./FeatureCard";
+import FeatureTiltCard from "./FeatureTiltCard";
 
 const OpportunitySection = () => {
   const opps = [
@@ -88,6 +89,7 @@ const OpportunitySection = () => {
                 desc={opp.desc}
                 tag={opp.tag}
               />
+              
             </AnimatedSection>
           ))}
         </div>

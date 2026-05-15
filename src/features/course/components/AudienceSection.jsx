@@ -10,6 +10,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import FeatureTiltCard from "./FeatureTiltCard";
 
 const AudienceSection = () => {
   const audiences = [
@@ -93,87 +94,12 @@ const AudienceSection = () => {
         {/* Audience Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6">
           {audiences.map((aud, i) => (
-            <AnimatedSection key={i} delay={i * 0.06}>
-              <motion.div
-                whileHover={{
-                  y: -6,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 220,
-                  damping: 18,
-                }}
-                className="
-                  group
-                  relative
-                  overflow-hidden
-                  rounded-xl
-                  border
-                  border-black/5
-                  bg-white/80
-                  backdrop-blur-xl
-                  p-7
-                  md:p-8
-                  shadow-lg
-                  hover:shadow-2xl
-                  hover:border-(--primary-color)/20
-                  transition-all
-                  duration-500
-                  h-full
-                "
-              >
-                {/* Hover Glow */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_top,rgba(184,255,3,0.10),transparent_70%)]" />
-
-                {/* Top Row */}
-                <div className="relative z-10 flex items-start justify-between mb-8">
-                  {/* Icon */}
-                  <div
-                    className="
-                      flex
-                     h-12
-                     w-12
-                     lg:h-10
-                     lg:w-10
-                      items-center
-                      justify-center
-                      rounded-xl
-                      border
-                      border-black/5
-                      bg-gray-50
-                      shadow-sm
-                      transition-all
-                      duration-500
-                      group-hover:bg-(--primary-color)
-                      group-hover:shadow-[0_0_30px_rgba(184,255,3,0.18)]
-                    "
-                  >
-                    <aud.icon
-                      size={22}
-                      className="text-black"
-                      strokeWidth={2}
-                    />
-                  </div>
-
-                </div>
-
-                {/* Content */}
-                <div className="relative z-10">
-                  {/* Title */}
-                  <h3 className="text-3xl font-bold tracking-tight leading-tight mb-4">
-                    {aud.title}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-base md:text-lg text-zinc-500 font-medium leading-relaxed">
-                    {aud.desc}
-                  </p>
-                </div>
-
-                {/* Bottom Accent Line */}
-                <div className="absolute bottom-0 left-0 h-1 w-0 bg-(--primary-color) group-hover:w-full transition-all duration-700" />
-              </motion.div>
-            </AnimatedSection>
+            <FeatureTiltCard
+              key={i}
+              icon={aud.icon}
+              label={aud.title}
+              sub={aud.desc}
+            />
           ))}
         </div>
 
