@@ -11,6 +11,7 @@ import {
 import AnimatedSection from "./AnimatedSection";
 import { Link } from "react-scroll";
 import HeroIntraction from "./HeroIntraction";
+import FeatureTiltCard from "./FeatureTiltCard";
 
 const HeroSection = () => {
   return (
@@ -122,44 +123,32 @@ const HeroSection = () => {
           </Link>
         </AnimatedSection>
 
-        {/* <AnimatedSection delay={0.3}>
-          <p className="text-lg md:text-2xl text-gray-500 max-w-3xl mx-auto mb-12 font-medium leading-relaxed text-balance px-4">
-            Create AI product ads, UGC videos, AI commercials and Urdu
-            voiceovers even if you’re starting from zero.
-          </p>
-        </AnimatedSection> */}
-
-        <AnimatedSection delay={0.5}>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {[
-              // { icon: Users, label: "75 Seats Only", sub: "Strictly limited" },
-              {
-                icon: Video,
-                label: "Recorded Lectures",
-                sub: "Access anytime after class",
-              },
-              {
-                icon: Calendar,
-                label: "12 Live Classes",
-                sub: "Hands-on training",
-              },
-              { icon: Banknote, label: "PKR 5,000", sub: "Launch offer price" },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="bg-gray-50/50 backdrop-blur-sm border border-gray-100 p-6 rounded-md flex flex-col items-center group hover:border-accent/30 transition-colors shadow shadow-black/10"
-              >
-                <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center mb-4 group-hover:bg-accent transition-colors">
-                  <item.icon size={24} className="text-black" />
-                </div>
-                <span className="font-bold text-xl">{item.label}</span>
-                <span className="text-gray-400 text-sm font-medium">
-                  {item.sub}
-                </span>
-              </div>
-            ))}
-          </div>
-        </AnimatedSection>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+          {[
+            {
+              icon: Video,
+              label: "Lifetime Access",
+              sub: "Replay lessons anytime after class",
+            },
+            {
+              icon: Calendar,
+              label: "Hands-On AI Training",
+              sub: "12 live interactive sessions",
+            },
+            {
+              icon: Banknote,
+              label: "PKR 5,000",
+              sub: "Limited-time launch pricing",
+            },
+          ].map((item, i) => (
+            <FeatureTiltCard
+              key={i}
+              icon={item.icon}
+              label={item.label}
+              sub={item.sub}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
