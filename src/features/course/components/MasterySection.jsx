@@ -87,7 +87,7 @@ const MasterySection = () => {
               </h2>
 
               {/* Description */}
-              <p className="text-base md:text-2xl text-zinc-500 font-medium max-w-3xl leading-relaxed">
+              <p className="text-base md:text-xl text-zinc-500 font-medium max-w-3xl leading-relaxed">
                 This isn't just another AI course. It's a complete creator
                 system designed to help you build profitable AI services.
               </p>
