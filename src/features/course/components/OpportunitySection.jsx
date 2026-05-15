@@ -1,6 +1,7 @@
 import AnimatedSection from "./AnimatedSection";
 import { Camera, Video, UserCheck, Mic, ArrowRight } from "lucide-react";
 import ColorHeading from "./ColorHeading";
+import { motion } from "framer-motion";
 
 const OpportunitySection = () => {
   const opps = [
@@ -8,88 +9,231 @@ const OpportunitySection = () => {
       icon: Camera,
       title: "AI Product Photography",
       price: "PKR 5,000 / Shoot",
-      desc: "Turn phone photos into professional studio-grade shots for eCommerce brands.",
+      desc: "Turn ordinary phone photos into studio-quality ecommerce visuals for brands.",
+      tag: "Beginner Friendly",
     },
     {
       icon: Video,
       title: "AI Video Ads",
       price: "PKR 15,000 / Ad",
-      desc: "Create cinematic product commercials using AI without a single camera crew.",
+      desc: "Create cinematic AI commercials without cameras, studios, or expensive crews.",
+      tag: "High Demand",
     },
     {
       icon: UserCheck,
       title: "UGC AI Content",
       price: "PKR 10,000 / Video",
-      desc: "Generate realistic 'User Generated Content' using digital human AI models.",
+      desc: "Generate realistic creator-style videos using AI human models and avatars.",
+      tag: "Fast Growing",
     },
     {
       icon: Mic,
       title: "Urdu AI Voiceovers",
       price: "PKR 3,000 / Script",
-      desc: "Clone voices or create perfect Urdu voiceovers for marketing campaigns.",
+      desc: "Create realistic Urdu voiceovers for ads, reels, and marketing campaigns.",
+      tag: "Low Competition",
     },
   ];
 
   return (
-    <section className="py-24 px-6 bg-gray-50 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-20">
+    <section className="relative overflow-hidden bg-zinc-50 py-24 md:py-32 px-5 md:px-6">
+      {/* Background Effects */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-(--primary-color)/10 blur-3xl" />
+
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, black 1px, transparent 1px),
+              linear-gradient(to bottom, black 1px, transparent 1px)
+            `,
+            backgroundSize: "60px 60px",
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Heading */}
+        <div className="text-center mb-16 md:mb-24">
           <AnimatedSection>
+            <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 shadow-sm mb-6">
+              <div className="h-2 w-2 rounded-full bg-(--primary-color) animate-pulse" />
+              <span className="text-sm font-semibold text-zinc-600">
+                High-Income AI Skills
+              </span>
+            </div>
+
             <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-[0.9] mb-6">
-              Modern Income <br /> <ColorHeading text={"Opportunities"}/>
+              {" "}
+              Modern Income <br /> <ColorHeading text={"Opportunities"} />{" "}
             </h2>
-            <p className="text-xl text-(--secondary-color) font-medium max-w-2xl mx-auto">
-              Brands are desperate for high-quality content. Here's what you can
-              charge as a solo creator.
+
+            <p className="text-lg md:text-xl text-(--secondary-color) font-medium max-w-3xl mx-auto leading-relaxed lg:leading-normal">
+              Businesses are actively searching for creators who can produce
+              fast, scalable, AI-powered content.
             </p>
           </AnimatedSection>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
+        {/* Opportunity Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6 mb-20 md:mb-28">
           {opps.map((opp, i) => (
-            <AnimatedSection
-              key={i}
-              delay={i * 0.1}
-              className="bg-white cursor-pointer p-8 rounded-xl border border-gray-200 shadow-sm hover:shadow-xl transition-all group"
-            >
-              <div className="w-14 h-14 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-(--primary-color) transition-colors">
-                <opp.icon size={28} className="text-black" />
-              </div>
-              <h3 className="text-2xl font-bold mb-2">{opp.title}</h3>
-              <div className="bg-(--accent)/10 px-3 py-1 rounded-full inline-block mb-4">
-                <span className="text-sm font-black text-black">
-                  {opp.price}
-                </span>
-              </div>
-              <p className="text-gray-500 font-medium leading-relaxed">
-                {opp.desc}
-              </p>
+            <AnimatedSection key={i} delay={i * 0.08}>
+              <motion.div
+                whileHover={{
+                  y: -8,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 220,
+                  damping: 18,
+                }}
+                className="
+                  group
+                  relative
+                  h-full
+                  overflow-hidden
+                  rounded-xl
+                  border
+                  border-black/5
+                  bg-white/80
+                  backdrop-blur-xl
+                  p-7
+                  md:p-8
+                  shadow-lg
+                  hover:shadow-2xl
+                  hover:border-(--primary-color)/30
+                  transition-all
+                  duration-500
+                "
+              >
+                {/* Glow */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_top,rgba(184,255,3,0.14),transparent_70%)]" />
+
+                {/* Top Row */}
+                <div className="relative z-10 flex items-start justify-between mb-8">
+                  {/* Icon */}
+                  <div
+                    className="
+                      flex
+                      h-12
+                      w-12
+                      lg:h-10
+                      lg:w-10
+                      items-center
+                      justify-center
+                      rounded-xl
+                      lg:rounded-lg
+                      bg-zinc-100
+                      border
+                      border-black/5
+                      group-hover:bg-(--primary-color)
+                      group-hover:scale-110
+                      transition-all
+                      duration-500
+                    "
+                  >
+                    <opp.icon size={22} className="text-black lg:size-5" />
+                  </div>
+
+                  {/* Tag */}
+                  <div className="rounded-full bg-black px-3 py-1">
+                    <span className="text-xs font-medium uppercase tracking-wide lg:text-[10px] lg:leading-none text-white">
+                      {opp.tag}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Price */}
+                <div className="mb-5">
+                  <div className="inline-flex items-center rounded-full bg-(--primary-color)/15 px-4 py-2 border border-(--primary-color)/20">
+                    <span className="text-sm md:text-base font-black lg:text-xs text-bold">
+                      {opp.price}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-2xl md:text-[2rem] lg:text-2xl font-bold tracking-tight leading-tight mb-4">
+                  {opp.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-(--secondary-color) text-base md:text-lg lg:text-sm leading-relaxed ">
+                  {opp.desc}
+                </p>
+
+                {/* Bottom Hover Line */}
+                <div className="absolute bottom-0 left-0 h-1 w-0 bg-(--primary-color) group-hover:w-full transition-all duration-700" />
+              </motion.div>
             </AnimatedSection>
           ))}
         </div>
 
-        <AnimatedSection
-          delay={0.4}
-          className="bg-black text-white p-10 md:p-16 rounded-xl text-center relative overflow-hidden"
-        >
-          <div className="absolute inset-0 bg-(--primary-color)/10 blur-[100px]" />
-          <h3 className="text-3xl md:text-5xl font-bold mb-6 relative z-10 select-none">
-            Just 3 clients/month can generate <br className="hidden md:block" />
-            <span className="text-(--primary-color) underline underline-offset-8">
-              PKR 60,000–100,000+
-            </span>
-          </h3>
-          <p className="text-xl text-gray-400 font-medium mb-10 relative z-10">
-            You don't need a job. You need a high-value skill that solves
-            specific business problems.
-          </p>
-          <a
-            href="#pricing"
-            className="relative z-10 inline-flex items-center gap-2 bg-(--primary-color) text-black px-8 py-4 rounded-md font-bold text-lg hover:scale-105 transition-transform"
-          >
-            Start Your Business Today
-            <ArrowRight size={32} />
-          </a>
+        {/* Income Potential Block */}
+        <AnimatedSection delay={0.4}>
+          <div className="relative overflow-hidden rounded-xl bg-black px-6 py-14 md:px-14 md:py-20 text-center">
+            {/* Glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(184,255,3,0.18),transparent_70%)]" />
+
+            {/* Noise */}
+            <div className="absolute inset-0 opacity-[0.03] bg-[radial-gradient(circle,white_1px,transparent_1px)] [background-size:22px_22px]" />
+
+            <div className="relative z-10">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 mb-8">
+                <div className="h-2 w-2 rounded-full bg-(--primary-color) animate-pulse" />
+                <span className="text-sm font-semibold text-white/70">
+                  Real Income Potential
+                </span>
+              </div>
+
+              {/* Heading */}
+              <h3 className="text-4xl md:text-6xl font-bold tracking-[-0.04em] leading-[1] mb-2 text-white">
+                Just 3 Clients / Month Can Generate
+              </h3>
+
+              <div className="mb-8">
+                <span className="text-4xl md:text-7xl font-black tracking-tight text-(--primary-color)">
+                  PKR 60K–100K+
+                </span>
+              </div>
+
+              {/* Description */}
+              <p className="text-lg md:text-2xl lg:text-lg text-zinc-400 font-medium leading-relaxed max-w-3xl mx-auto mb-10">
+                You don't need a traditional job anymore. You need a valuable AI
+                skill that businesses already pay for.
+              </p>
+
+              {/* CTA */}
+              <a
+                href="#pricing"
+                className="
+                  inline-flex
+                  items-center
+                  gap-3
+                  rounded-xl
+                  bg-(--primary-color)
+                  px-6
+                  py-5
+                  text-sm
+                  md:text-xl
+                  lg:text-base
+                  font-bold
+                  text-black
+                  shadow-2xl
+                  shadow-(--primary-color)/20
+                  hover:scale-105
+                  transition-all
+                  duration-300
+                "
+              >
+                Start Building Your AI Business
+                <ArrowRight size={24} strokeWidth={3} />
+              </a>
+            </div>
+          </div>
         </AnimatedSection>
       </div>
     </section>

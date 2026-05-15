@@ -23,7 +23,7 @@ const ComparisonSection = () => {
   return (
     <section
       id="comparison"
-      className="relative overflow-hidden bg-zinc-50 py-24 md:py-32 lg:pb-24 px-5 md:px-6"
+      className="relative overflow-hidden bg-zinc-50 py-14 sm:py-24 md:py-32 lg:pb-24 px-5 md:px-6"
     >
       {/* Background Glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -46,7 +46,7 @@ const ComparisonSection = () => {
             <ColorHeading text="Advertising" />
           </h2>
 
-          <p className="text-lg md:text-xl text-(--secondary-color) font-medium max-w-3xl mx-auto leading-relaxed lg:leading-normal ">
+          <p className="text-lg md:text-xl text-(--secondary-color) font-medium max-w-3xl mx-auto leading-relaxed lg:leading-normal">
             Why AI creators outperform traditional workflows in speed,
             scalability, and profitability.
           </p>
@@ -70,7 +70,7 @@ const ComparisonSection = () => {
                 relative
                 h-full
                 overflow-hidden
-                rounded-3xl
+                rounded-xl
                 border
                 border-zinc-200
                 bg-white/70
@@ -86,8 +86,8 @@ const ComparisonSection = () => {
               <div className="relative z-10">
                 {/* Header */}
                 <div className="flex items-center gap-4 mb-10">
-                  <div className="flex h-14 w-14 lg:h-12 lg:w-12 items-center justify-center rounded-xl bg-red-100 text-red-500 border border-red-200">
-                    <X size={24} strokeWidth={3} />
+                  <div className="flex h-10 w-10 lg:h-12 lg:w-12 items-center justify-center rounded-md bg-red-100 text-red-500 border border-red-200">
+                    <X size={20} strokeWidth={3} />
                   </div>
 
                   <div>
@@ -112,7 +112,7 @@ const ComparisonSection = () => {
                         <X size={14} />
                       </div>
 
-                      <span className="text-lg md:text-xl lg:text-lg font-medium leading-relaxed">
+                      <span className="text-base md:text-xl lg:text-lg font-medium leading-relaxed">
                         {item}
                       </span>
                     </li>
@@ -132,7 +132,7 @@ const ComparisonSection = () => {
                 relative
                 h-full
                 overflow-hidden
-                rounded-3xl
+                rounded-xl
                 border
                 border-(--primary-color)/30
                 bg-black
@@ -155,8 +155,8 @@ const ComparisonSection = () => {
                   <div
                     className="
                       flex
-                      h-14
-                      w-14
+                      h-10
+                      w-10
                       lg:h-12
                       lg:w-12
                       items-center
@@ -171,7 +171,7 @@ const ComparisonSection = () => {
                       duration-500
                     "
                   >
-                    <Check size={24} strokeWidth={3} />
+                    <Check size={20} strokeWidth={3} />
                   </div>
 
                   <div>
@@ -209,7 +209,7 @@ const ComparisonSection = () => {
                         <Check size={14} strokeWidth={3} />
                       </div>
 
-                      <span className="text-lg md:text-xl lg:text-lg font-medium leading-relaxed text-white/90">
+                      <span className="text-base md:text-xl lg:text-lg font-medium leading-relaxed text-white/90">
                         {item}
                       </span>
                     </li>
