@@ -39,15 +39,6 @@ const FloatingIcon = ({
     return () => window.removeEventListener("mousemove", handleMouseMove);
   }, [strength]);
 
-  const cardStyles = {
-    default:
-      "bg-white/80 border border-white/60 shadow-[0_12px_40px_rgba(0,0,0,0.10)]",
-
-    filled: "bg-white shadow-[0_16px_50px_rgba(0,0,0,0.14)]",
-
-    ghost:
-      "bg-white/40 border border-white/30 shadow-[0_10px_30px_rgba(0,0,0,0.08)]",
-  };
 
   return (
     <motion.div
@@ -95,10 +86,6 @@ const FloatingIcon = ({
     >
       <div
         className={`
-          rounded-md
-          overflow-hidden
-          p-0
-          ${cardStyles[cardStyle]}
           ${iconClassName}
         `}
       >
@@ -194,7 +181,7 @@ const HeroInteraction = () => {
       {/* LEFT SIDE */}
 
       <FloatingIcon
-        image="/images/kling.avif"
+        image="/images/ai1.avif"
         size={60}
         strength={22}
         delay={0.2}
@@ -204,13 +191,12 @@ const HeroInteraction = () => {
       />
 
       <FloatingIcon
-        image="/images/midjourney.avif"
+        image="/images/ai2.avif"
         size={72}
         strength={32}
         delay={0.45}
         rotate={6}
-        cardStyle="filled"
-        className="top-[42%] left-[10%] shadow-2xl shadow-black/10"
+        className="top-[42%] left-[10%] "
       />
 
       <DotCluster className="top-[38%] left-[4%]" delay={0.7} />
@@ -220,22 +206,20 @@ const HeroInteraction = () => {
       {/* RIGHT SIDE */}
 
       <FloatingIcon
-        image="/images/veo3.avif"
+        image="/images/ai3.avif"
         size={54}
         strength={28}
         delay={0.3}
         rotate={10}
-        cardStyle="ghost"
         className="top-[18%] right-[16%]"
       />
 
       <FloatingIcon
-        image="/images/higgsfield.avif"
+        image="/images/ai4.avif"
         size={74}
         strength={36}
         delay={0.55}
         rotate={-5}
-        cardStyle="filled"
         className="top-[45%] right-[12%] rounded-full"
       />
 
