@@ -82,8 +82,8 @@ const HardTruthSection = () => {
           {/* Paragraph */}
           <div className="w-full lg:w-1/2">
             <AnimatedSection delay={0.2}>
-              <div className="border border-white/10 bg-white/[0.03] backdrop-blur-xl rounded-xl p-6 md:p-8">
-                <p className="text-base md:text-2xl text-gray-300 font-base leading-relaxed">
+              <div className="border border-white/10 bg-white/[0.03] backdrop-blur-xl rounded-xl p-6 md:p-8 lg:pt-20">
+                <p className="text-base md:text-2xl lg:text-xl text-gray-300 font-base leading-relaxed lg:leading-normal">
                   The world has changed. Businesses don't reward effort anymore
                   they reward{" "}
                   <span className="text-white font-bold">speed</span>,{" "}
@@ -154,6 +154,8 @@ const HardTruthSection = () => {
                     z-10
                     w-16
                     h-16
+                    md:h-12
+                    md:w-12
                     rounded-xl
                     border
                     border-white/10
@@ -169,18 +171,18 @@ const HardTruthSection = () => {
                   "
                 >
                   <truth.icon
-                    size={30}
+                    size={24}
                     className="text-white group-hover:text-black transition-colors duration-500"
                   />
                 </div>
 
                 {/* Content */}
                 <div className="relative z-10">
-                  <h3 className="text-2xl md:text-[1.9rem] font-bold leading-tight tracking-tight mb-5 select-none">
+                  <h3 className="text-2xl md:text-[1.9rem] lg:text-xl font-bold leading-tight tracking-tight mb-5 select-none">
                     {truth.title}
                   </h3>
 
-                  <p className="text-gray-400 text-base md:text-lg leading-relaxed font-medium select-none">
+                  <p className="text-gray-400 text-base lg:text-xs leading-relaxed font-medium select-none">
                     {truth.description}
                   </p>
                 </div>
