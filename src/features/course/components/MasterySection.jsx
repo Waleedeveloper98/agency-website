@@ -1,75 +1,111 @@
 import AnimatedSection from "./AnimatedSection";
 import { Layers, Zap, Monitor, Globe, Mail, Search } from "lucide-react";
 import ColorHeading from "./ColorHeading";
+import { motion } from "framer-motion";
+import FeatureCard from "./FeatureCard";
 
 const MasterySection = () => {
   const topics = [
     {
       title: "AI Photography Mastery",
-      desc: "Master Midjourney, Flux, and AI Upscalers to create hyper-realistic product shots.",
+      desc: "Master Midjourney, Flux, and AI upscalers to create studio-quality product visuals.",
       icon: Layers,
+      tag: "Beginner Friendly",
     },
     {
       title: "Cinematic AI Videography",
-      desc: "Learn Runway Gen-3 and Luma Dream Machine to animate products like a pro.",
+      desc: "Create cinematic AI commercials using Runway Gen-3 and Luma Dream Machine.",
       icon: Zap,
+      tag: "High Demand",
+      featured: true,
     },
     {
       title: "The UGC AI Formula",
-      desc: "Create talking digital humans for TikTok & Meta ads using HeyGen and ElevenLabs.",
+      desc: "Build realistic AI creators for TikTok and Meta ads using HeyGen and ElevenLabs.",
       icon: Monitor,
+      tag: "Fast Growing",
     },
     {
       title: "Meta & TikTok Strategy",
-      desc: "How to structure ad campaigns, write copy, and set up tracking for conversions.",
+      desc: "Learn campaign structure, ad copywriting, and conversion tracking systems.",
       icon: Globe,
+      tag: "Client Favorite",
     },
     {
       title: "Urdu Voice Design",
-      desc: "Clone perfect local voices and sync them with AI videos for the Pakistani market.",
+      desc: "Clone realistic Urdu voices and sync them perfectly with AI-generated videos.",
       icon: Mail,
+      tag: "Low Competition",
     },
     {
       title: "Client Acquisition",
-      desc: "How to find high-paying brands, pitch your AI services, and close deals.",
+      desc: "Find brands, pitch AI services confidently, and close high-paying deals.",
       icon: Search,
+      tag: "Income Skill",
     },
   ];
 
   return (
-    <section id="mastery" className="py-24 px-6 bg-white overflow-hidden">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-8 mb-20">
-          <div className="md:w-2/3">
+    <section
+      id="mastery"
+      className="relative overflow-hidden bg-white py-24 md:py-32 px-5 md:px-6"
+    >
+      {/* Background Grid */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, black 1px, transparent 1px),
+              linear-gradient(to bottom, black 1px, transparent 1px)
+            `,
+            backgroundSize: "60px 60px",
+          }}
+        />
+
+        <div className="absolute top-0 right-0 h-96 w-96 rounded-full bg-(--primary-color)/10 blur-3xl" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto">
+        {/* Heading */}
+        <div className="flex flex-col lg:flex-row justify-between gap-10 mb-16 md:mb-24">
+          <div className="max-w-4xl">
             <AnimatedSection>
-              <h2 className="text-4xl md:text-7xl font-bold tracking-tighter leading-[0.9] mb-6">
-                What you will <br />
-                <ColorHeading text="Master" />
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 shadow-sm mb-6">
+                <div className="h-2 w-2 rounded-full bg-(--primary-color) animate-pulse" />
+                <span className="text-sm font-semibold text-zinc-600">
+                  Complete AI Creator System
+                </span>
+              </div>
+
+              {/* Heading */}
+              <h2 className="text-5xl md:text-7xl font-bold tracking-[-0.05em] leading-[0.92] mb-6">
+                Master The Most
+                <br />
+                Valuable <ColorHeading text="AI Skills" />
               </h2>
-              <p className="text-xl text-(--secondary-color) font-medium max-w-xl">
-                We don't just teach tools. We teach a complete business system
-                that turns AI skills into bank balances.
+
+              {/* Description */}
+              <p className="text-base md:text-2xl text-zinc-500 font-medium max-w-3xl leading-relaxed">
+                This isn't just another AI course. It's a complete creator
+                system designed to help you build profitable AI services.
               </p>
             </AnimatedSection>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 md:gap-6">
           {topics.map((topic, i) => (
-            <AnimatedSection
-              key={topic.title}
-              delay={i * 0.1}
-              className="group cursor-pointer border-b border-gray-100 pb-12 hover:border-accent transition-colors rounded-md shadow px-6 pt-4"
-            >
-              <div className="text-(--primary-color) mb-6 group-hover:scale-110 transition-transform origin-left">
-                <topic.icon size={48} strokeWidth={1} />
-              </div>
-              <h3 className="text-3xl font-bold mb-4 group-hover:text-(--primary-color) pr-4 transition-colors">
-                {topic.title}
-              </h3>
-              <p className="text-(--secondary-color) text-lg leading-relaxed font-medium">
-                {topic.desc}
-              </p>
+            <AnimatedSection key={topic.title} delay={i * 0.08}>
+              <FeatureCard
+                icon={topic.icon}
+                title={topic.title}
+                desc={topic.desc}
+                tag={topic.tag}
+                featured={topic.featured}
+              />
             </AnimatedSection>
           ))}
         </div>

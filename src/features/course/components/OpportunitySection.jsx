@@ -2,6 +2,7 @@ import AnimatedSection from "./AnimatedSection";
 import { Camera, Video, UserCheck, Mic, ArrowRight } from "lucide-react";
 import ColorHeading from "./ColorHeading";
 import { motion } from "framer-motion";
+import FeatureCard from "./FeatureCard";
 
 const OpportunitySection = () => {
   const opps = [
@@ -80,93 +81,13 @@ const OpportunitySection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5 md:gap-6 mb-20 md:mb-28">
           {opps.map((opp, i) => (
             <AnimatedSection key={i} delay={i * 0.08}>
-              <motion.div
-                whileHover={{
-                  y: -8,
-                }}
-                transition={{
-                  type: "spring",
-                  stiffness: 220,
-                  damping: 18,
-                }}
-                className="
-                  group
-                  relative
-                  h-full
-                  overflow-hidden
-                  rounded-xl
-                  border
-                  border-black/5
-                  bg-white/80
-                  backdrop-blur-xl
-                  p-7
-                  md:p-8
-                  shadow-lg
-                  hover:shadow-2xl
-                  hover:border-(--primary-color)/30
-                  transition-all
-                  duration-500
-                "
-              >
-                {/* Glow */}
-                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 bg-[radial-gradient(circle_at_top,rgba(184,255,3,0.14),transparent_70%)]" />
-
-                {/* Top Row */}
-                <div className="relative z-10 flex items-start justify-between mb-8">
-                  {/* Icon */}
-                  <div
-                    className="
-                      flex
-                      h-12
-                      w-12
-                      lg:h-10
-                      lg:w-10
-                      items-center
-                      justify-center
-                      rounded-xl
-                      lg:rounded-lg
-                      bg-zinc-100
-                      border
-                      border-black/5
-                      group-hover:bg-(--primary-color)
-                      group-hover:scale-110
-                      transition-all
-                      duration-500
-                    "
-                  >
-                    <opp.icon size={22} className="text-black lg:size-5" />
-                  </div>
-
-                  {/* Tag */}
-                  <div className="rounded-full bg-black px-3 py-1">
-                    <span className="text-xs font-medium uppercase tracking-wide lg:text-[10px] lg:leading-none text-white">
-                      {opp.tag}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Price */}
-                <div className="mb-5">
-                  <div className="inline-flex items-center rounded-full bg-(--primary-color)/15 px-4 py-2 border border-(--primary-color)/20">
-                    <span className="text-sm md:text-base font-black lg:text-xs text-bold">
-                      {opp.price}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-2xl md:text-[2rem] lg:text-2xl font-bold tracking-tight leading-tight mb-4">
-                  {opp.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-(--secondary-color) text-base md:text-lg lg:text-sm leading-relaxed ">
-                  {opp.desc}
-                </p>
-
-                {/* Bottom Hover Line */}
-                <div className="absolute bottom-0 left-0 h-1 w-0 bg-(--primary-color) group-hover:w-full transition-all duration-700" />
-              </motion.div>
+              <FeatureCard
+                icon={opp.icon}
+                title={opp.title}
+                price={opp.price}
+                desc={opp.desc}
+                tag={opp.tag}
+              />
             </AnimatedSection>
           ))}
         </div>
