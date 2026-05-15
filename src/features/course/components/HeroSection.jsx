@@ -10,15 +10,17 @@ import {
 } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
 import { Link } from "react-scroll";
+import HeroIntraction from "./HeroIntraction";
 
 const HeroSection = () => {
   return (
     <section className="relative pt-24 pb-20 md:pt-6 md:pb-32 px-6 overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[800px] pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-(--primary-color)/5 rounded-md blur-[120px]" />
-        <div className="absolute bottom-[20%] right-[-5%] w-[30%] h-[30%] bg-(--primary-color)/10 rounded-md blur-[100px]" />
+        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-(--primary-color)/20 rounded-full blur-[80px]" />
+        <div className="absolute bottom-[20%] right-[-5%] w-[30%] h-[30%] bg-(--primary-color)/40 rounded-full blur-[100px]" />
       </div>
+      <HeroIntraction />
 
       <div className="max-w-7xl mx-auto relative z-10 text-center">
         <AnimatedSection delay={0.1}>
