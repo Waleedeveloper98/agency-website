@@ -68,7 +68,7 @@ const MasterySection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Heading */}
-        <div className="flex flex-col lg:flex-row justify-between gap-10 mb-16 md:mb-24">
+        <div className="flex flex-col justify-between items-center text-center gap-10 mb-16 md:mb-24">
           <div className="max-w-4xl">
             <AnimatedSection>
               {/* Badge */}

@@ -28,13 +28,13 @@ const PortfolioSection = () => {
 
       <div className="relative z-10 max-w-7xl mx-auto">
         {/* Header */}
-        <div className="flex flex-col lg:flex-row justify-between gap-10 mb-16 md:mb-24">
+        <div className="flex flex-col items-center text-center justify-between gap-0 mb-16 md:mb-24">
           {/* Left */}
           <div className="max-w-4xl">
             <AnimatedSection>
               {/* Badge */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-4 py-2 shadow-sm mb-6">
-                <Sparkles size={14} className="text-(--primary-color)" />
+              <div className="inline-flex items-center gap-2 rounded-full border border-black/5 bg-(--primary-color) px-4 py-2 shadow-sm mb-6">
+                <Sparkles size={14} className="text-black" />
 
                 <span className="text-sm font-semibold text-zinc-600">
                   Client-Ready AI Projects
@@ -54,13 +54,9 @@ const PortfolioSection = () => {
 
           {/* Right */}
           <AnimatedSection delay={0.2} className="lg:max-w-md">
-            <p className="text-base md:text-lg text-zinc-400 font-medium max-w-3xl leading-relaxed ">
-              You won't just learn AI tools. You'll create agency-level projects
-              that brands are actively paying creators for.
-            </p>
 
             {/* Mini Stats */}
-            <div className="flex flex-wrap gap-3 mt-8">
+            <div className="flex flex-wrap justify-center items-center gap-3 mt-8">
               {["Commercial Ads", "UGC Videos", "Luxury Visuals"].map(
                 (item, i) => (
                   <div

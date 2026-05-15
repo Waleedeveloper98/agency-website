@@ -112,15 +112,6 @@ const HeroSection = () => {
             Join The AI Bootcamp
             <ArrowRight size={20} strokeWidth={3} />
           </Link>
-          <Link
-            to="curriculum"
-            smooth={true}
-            duration={500}
-            className="cursor-pointer w-full md:w-auto bg-white border-2 border-black/5 px-10 py-5 rounded-md font-bold text-base sm:text-xl hover:bg-gray-50 transition-all flex items-center justify-center gap-2 whitespace-nowrap"
-          >
-            <Play fill="currentColor" size={16} />
-            See What You'll Build
-          </Link>
         </AnimatedSection>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">

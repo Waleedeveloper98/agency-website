@@ -55,15 +55,15 @@ const HardTruthSection = () => {
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-(--primary-color)/10 blur-[140px]" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto">
+      <div className="relative z-10 max-w-7xl mx-auto ">
         {/* Top Content */}
-        <div className="flex flex-col lg:flex-row gap-8 sm:gap-2 lg:gap-20 items-start mb-16 md:mb-24">
+        <div className="flex flex-col items-center gap-8 sm:gap-2  justify-center text-center mb-16 md:mb-24">
           {/* Heading */}
           <div className="w-full lg:w-1/2">
             <AnimatedSection>
-              <div className="inline-flex items-center gap-2 border border-white/10 bg-white/5 backdrop-blur-md rounded-full px-4 py-2 mb-6">
-                <div className="w-2 h-2 rounded-full bg-(--primary-color) animate-pulse" />
-                <span className="text-sm font-semibold text-gray-300">
+              <div className="inline-flex items-center gap-2 border border-white/10 bg-(--primary-color) text-black backdrop-blur-md rounded-full px-4 py-2 mb-6">
+                <div className="w-2 h-2 rounded-full bg-lime-500 animate-pulse" />
+                <span className="text-sm font-semibold">
                   The Market Is Changing Fast
                 </span>
               </div>
@@ -81,23 +81,14 @@ const HardTruthSection = () => {
           {/* Paragraph */}
           <div className="w-full lg:w-1/2">
             <AnimatedSection delay={0.2}>
-              <div className="border border-white/10 bg-white/[0.03] backdrop-blur-xl rounded-xl p-6 md:p-8 lg:pt-20">
-                <p className="text-base md:text-2xl lg:text-xl text-gray-300 font-base leading-relaxed lg:leading-normal">
-                  The world has changed. Businesses don't reward effort anymore
-                  they reward{" "}
-                  <span className="text-white font-bold">speed</span>,{" "}
-                  <span className="text-white font-bold">scale</span>, and{" "}
-                  <span className="text-(--primary-color) font-bold">
-                    AI-powered execution.
-                  </span>
-                </p>
+              <div className="border border-white/10 bg-white/[0.03] backdrop-blur-xl rounded-xl p-6 md:p-8 lg:pt-0">
 
-                <div className="mt-8 flex flex-wrap gap-3">
+                <div className="mt-8 flex flex-wrap gap-3 items-center justify-center">
                   {["AI Ads", "UGC Videos", "Voiceovers", "AI Commercials"].map(
                     (item, i) => (
                       <div
                         key={i}
-                        className="px-4 py-2 rounded-md bg-white/5 border border-white/10 text-sm font-semibold text-gray-300 hover:bg-(--primary-color) hover:text-black transition-colors duration-300 cursor-pointer"
+                        className="px-4 py-2 rounded-full bg-white/5 border border-white/10 text-sm font-semibold text-gray-300 hover:bg-(--primary-color) hover:text-black transition-colors duration-300 cursor-pointer"
                       >
                         {item}
                       </div>

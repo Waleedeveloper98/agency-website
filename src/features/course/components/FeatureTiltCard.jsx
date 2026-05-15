@@ -89,7 +89,7 @@ const FeatureTiltCard = ({ icon: Icon, label, sub, className = "" }) => {
         />
 
         {/* Content */}
-        <div className="relative z-10 flex flex-col items-center text-center">
+        <div className="relative z-10 flex flex-col items-start">
           {/* Icon */}
           <motion.div
             whileHover={{

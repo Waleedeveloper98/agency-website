@@ -1,5 +1,6 @@
 import AnimatedSection from "./AnimatedSection";
 import { MessageCircle, ArrowRight, Sparkles } from "lucide-react";
+import ColorHeading from "./ColorHeading";
 
 const FinalCTA = () => {
   return (
@@ -16,17 +17,15 @@ const FinalCTA = () => {
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
-          <h2 className="text-5xl md:text-9xl font-black tracking-tighter leading-[0.8] mb-12">
+          <h2 className="text-5xl md:text-8xl font-bold tracking-tighter leading-[0.8] mb-12">
             The AI <br />
             Opportunity <br />{" "}
-            <span className="text-(--primary-color) underline decoration-[10px] underline-offset-8">
-              Won't Wait.
-            </span>
+            <ColorHeading text={"Won't Wait"}/>
           </h2>
         </AnimatedSection>
 
         <AnimatedSection delay={0.3}>
-          <p className="text-xl md:text-3xl text-gray-400 font-medium mb-20 leading-tight text-balance">
+          <p className="text-xl text-gray-400 font-medium mb-20 leading-tight text-balance">
             Choose where you'll be 6 months from now. Still working for peanuts,
             or leading the AI revolution in Pakistan?
           </p>
@@ -38,7 +37,7 @@ const FinalCTA = () => {
         >
           <a
             href="#pricing"
-            className="w-full md:w-auto bg-(--primary-color) text-bold px-12 py-6 rounded-xl font-black text-2xl shadow-[0_20px_50px_rgba(184,255,3,0.3)] hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3"
+            className="w-full md:w-auto bg-(--primary-color) text-bold px-12 py-6 rounded-xl font-black text-2xl shadow-[0_20px_50px_rgba(184,255,3,0.3)] hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-3 text-shadow-2xl text-shadow-black/40"
           >
             Join Bootcamp
             <ArrowRight size={24} strokeWidth={3} />
