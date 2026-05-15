@@ -25,32 +25,74 @@ const HeroSection = () => {
       <div className="max-w-7xl mx-auto relative z-10 text-center">
         <AnimatedSection delay={0.1}>
           <div className="inline-flex select-none items-center gap-2 bg-black text-white px-4 py-1.5 rounded-md text-sm font-bold mb-8 md:mb-3 md:text-xs">
-            <Sparkles className="text-(--primary-color) rotate-anim" size={16} />
-            <span>Next Cohort Starts</span>
+            <Sparkles
+              className="text-(--primary-color) rotate-anim"
+              size={16}
+            />
+            <span>Enrollment Closing Soon</span>
           </div>
         </AnimatedSection>
 
         <AnimatedSection delay={0.2}>
           <h1 className="secondary-font text-4xl md:text-[3.9rem] text-shadow-lg text-shadow-black/10 md:w-[80%] md:mx-auto font-bold tracking-tighter mb-8 md:mb-3">
             Learn Generative AI in{" "}
-            <span className="text-(--primary-color)">30 Days</span>
+            <span className="text-(--primary-color) text-shadow-lg text-shadow-black/7">
+              30 Days
+            </span>
             <br />
-            Get Paid By <span className="italic-font italic font-light">Brands</span>
+            Get Paid By{" "}
+            <span className="italic-font italic font-light">Brands</span>
           </h1>
         </AnimatedSection>
         {/* Hero Visual Mockup (Simulated) */}
-        <AnimatedSection delay={0.6} className=" max-w-[44rem] mx-auto px-4">
-          <div className="relative aspect-video bg-gray-100 rounded-2xl overflow-hidden border-4 md:border-8 border-white shadow-2xl mb-10">
+        <AnimatedSection delay={0.6} className="max-w-[44rem] mx-auto px-4">
+          <div
+            className="relative aspect-video bg-gray-100 rounded-2xl overflow-hidden border-4 md:border-8 border-white mb-10"
+            style={{
+              transform: "perspective(1000px) rotateX(2deg)",
+              boxShadow: `
+        0 2px 4px rgba(0,0,0,0.04),
+        0 8px 16px rgba(0,0,0,0.08),
+        0 20px 40px rgba(0,0,0,0.12),
+        0 40px 80px rgba(0,0,0,0.10),
+        0 1px 0px rgba(255,255,255,0.8) inset
+      `,
+              transition: "transform 0.4s ease, box-shadow 0.4s ease",
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform =
+                "perspective(1000px) rotateX(0deg) translateY(-4px)";
+              e.currentTarget.style.boxShadow = `
+        0 4px 8px rgba(0,0,0,0.05),
+        0 16px 32px rgba(0,0,0,0.10),
+        0 32px 64px rgba(0,0,0,0.14),
+        0 60px 100px rgba(0,0,0,0.10),
+        0 1px 0px rgba(255,255,255,0.8) inset
+      `;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform =
+                "perspective(1000px) rotateX(2deg)";
+              e.currentTarget.style.boxShadow = `
+        0 2px 4px rgba(0,0,0,0.04),
+        0 8px 16px rgba(0,0,0,0.08),
+        0 20px 40px rgba(0,0,0,0.12),
+        0 40px 80px rgba(0,0,0,0.10),
+        0 1px 0px rgba(255,255,255,0.8) inset
+      `;
+            }}
+          >
             <img
-              src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80"
+              src="/images/thumbnail.avif"
               alt="AI Ads Visualization"
               className="w-full h-full object-cover opacity-80"
               referrerPolicy="no-referrer"
+              loading="lazy"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-16 h-16 md:h-20 md:w-20 bg-(--primary-color) rounded-full flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform bg-(--primary-color)">
-                <Play fill="black" size={28} className="ml-1" />
+              <div className="w-14 h-14 md:h-20 md:w-20 bg-(--primary-color) rounded-full flex items-center justify-center shadow-2xl cursor-pointer hover:scale-110 transition-transform">
+                <Play fill="black" size={24} className="ml-1" />
               </div>
             </div>
           </div>
@@ -64,19 +106,19 @@ const HeroSection = () => {
             to="pricing"
             smooth={true}
             duration={500}
-            className="cursor-pointer w-full md:w-auto bg-(--primary-color) text-black px-10 py-5 rounded-md font-bold text-xl shadow-[0_20px_40px_-10px_rgba(184,255,3,0.4)] hover:shadow-[0_25px_50px_-12px_rgba(184,255,3,0.5)] hover:scale-[1.02] transition-all flex items-center justify-center gap-2"
+            className="cursor-pointer w-full md:w-auto bg-(--primary-color) text-black px-10 py-5 rounded-md font-bold text-base sm:text-xl shadow-[0_20px_40px_-10px_rgba(184,255,3,0.4)] hover:shadow-[0_25px_50px_-12px_rgba(184,255,3,0.5)] hover:scale-[1.02] transition-all flex items-center justify-center gap-2 whitespace-nowrap"
           >
-            Reserve My Seat
+            Join The AI Bootcamp
             <ArrowRight size={20} strokeWidth={3} />
           </Link>
           <Link
             to="curriculum"
             smooth={true}
             duration={500}
-            className="cursor-pointer w-full md:w-auto bg-white border-2 border-black/5 px-10 py-5 rounded-md font-bold text-xl hover:bg-gray-50 transition-all flex items-center justify-center gap-2"
+            className="cursor-pointer w-full md:w-auto bg-white border-2 border-black/5 px-10 py-5 rounded-md font-bold text-base sm:text-xl hover:bg-gray-50 transition-all flex items-center justify-center gap-2 whitespace-nowrap"
           >
             <Play fill="currentColor" size={16} />
-            View Curriculum
+            See What You'll Build
           </Link>
         </AnimatedSection>
 
