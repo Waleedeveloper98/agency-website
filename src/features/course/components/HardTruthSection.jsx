@@ -72,9 +72,7 @@ const HardTruthSection = () => {
                 <br />
                 Are Falling
                 <br />
-                <span className="bg-(--primary-color) text-black italic-font italic font-light rotate-[-1deg] inline-block px-2">
-                  Behind.
-                </span>
+                <ColorHeading text="Behind" />
               </h2>
             </AnimatedSection>
           </div>
